@@ -1,32 +1,52 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
+
 import Modal from "react-bootstrap/Modal";
 import ModalHeader from "react-bootstrap/ModalHeader";
 import ModalTitle from "react-bootstrap/ModalTitle";
 import ModalBody from "react-bootstrap/ModalBody";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+import Button from "react-bootstrap/Button";
 
-export default class ModalLogIn extends Component{
-  render(){
-    return(
-      <Modal
-      {...props}
-      size="md"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
-        </Modal.Body>
-      </Modal>
-    );
-  }
+import LogInForm from "./LogInForm";
+
+
+
+export default function ModalLogIn(props){
+
+  const[modalShow, setModalShow] = useState(false);
+
+  return(
+    <ButtonToolbar>
+      <Button className="btn-space" variant="info" onClick={() => setModalShow(true)}>
+        LogIn
+      </Button>
+
+
+      <LogInVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </ButtonToolbar>
+  );
+}
+
+// functional component
+function LogInVerticallyCenteredModal(props) {
+  return(
+    <Modal
+    {...props}
+    size="sm"
+    aria-labelledby="contained-modal-title-vcenter"
+    centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Log In
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <LogInForm onHide={props.onHide}/>
+      </Modal.Body>
+    </Modal>
+  );
 }
