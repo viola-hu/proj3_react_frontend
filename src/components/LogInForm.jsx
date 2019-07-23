@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import FormText from "react-bootstrap/FormText";
+// import FormText from "react-bootstrap/FormText";
 
 
 function LogInForm(props){

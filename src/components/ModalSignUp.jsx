@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {useState} from 'react';
 
 import Modal from "react-bootstrap/Modal";
 import ModalHeader from "react-bootstrap/ModalHeader";
@@ -15,7 +15,7 @@ export default function ModalSignUp(props){
 
   const[modalShow, setModalShow] = useState(false);
 
-  console.log('Re-rendered ModalSignUp!!');
+  // console.log('Re-rendered ModalSignUp!!');
 
   return(
     <ButtonToolbar>

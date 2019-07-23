@@ -24,6 +24,13 @@
   background-color:rgb(135, 247, 234);
 }
 
+.body-footer{
+  text-align: center;
+}
+.happykids{
+  width:80vw;
+}
+
 .btn{
   color:white;
 }
@@ -64,5 +71,16 @@
 
 
 #test{
-  background-color: var(--indigo);
+  /* background-color: var(--indigo); */
+}
+
+#out-of-stock{
+  color:red;
+}
+
+#add-to-cart{
+  background: var(--pink);
+  border-color: var(--pink);
+  border-radius: 20px;
+  padding: .375rem 3rem;
 }

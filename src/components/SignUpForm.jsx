@@ -57,7 +57,7 @@ function SignUpForm(props){
 
     axios.post(URL, data)
     .then(res => {
-      console.log('created user!', res.data.success);
+      console.log('created user!', res);
       getTokenAndRedirect();
     })
     .catch(err => {
