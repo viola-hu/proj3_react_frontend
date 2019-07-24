@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -14,6 +15,7 @@ import Button from "react-bootstrap/Button";
 
 export default function Product(props){
 
+  // product id passed by props
   const {id} = props.match.params;
   // console.log(id);
 
@@ -26,6 +28,8 @@ export default function Product(props){
   const [errorMessage, setErrorMessage] = useState('');
   const [buttonStatus, setButtonStatus] = useState(false);
   const [buttonText, setButtonText] = useState('Add to Cart');
+  const [successAddToCartMessage, setSuccessAddToCartMessage] = useState('');
+  const [cartId, setCartId] = useState(null);
 
   // first time the component renders
   // axios request to get the product info by id
@@ -37,7 +41,7 @@ export default function Product(props){
     }
   },[]);
 
-  const getProductById = ()=>{
+  const getProductById = (id)=>{
     const URL = `http://localhost:3000/products/${id}`;
 
     axios.get(URL)
@@ -53,7 +57,7 @@ export default function Product(props){
       // setErrorMessage('Product not found');
       props.history.push('/')
     });
-  }
+  };
 
 
   // ************ regardless of user loggin, check if the product is out of stock *************
@@ -77,8 +81,13 @@ export default function Product(props){
   const _handleChangeQuantity = (event) => {
     console.log('event.target.value:', event.target.value); // actual input quantity
 
-    // Only when a user is logged in, toggle the button status based on user input quantity
+    // Only when a user is logged in,
+    // can the user toggle the button status based on user input quantity
     if(jwt){
+      // if the user has added product into the cart, will get success message
+      // on next click on quantity, clear the message;
+      setSuccessAddToCartMessage('');
+
       // TEST: typeof event.target.value is a string, need to parse it to integer!!!
       let wantedQuantity = parseInt(event.target.value);
       // console.log('type of wantedQuantity', typeof(wantedQuantity));
@@ -142,11 +151,24 @@ export default function Product(props){
     axios.post(URL, data, configHeader)
     .then(res => {
       console.log('added to cart',res);
+      // pop up a msg to user, showing adding to cart successfully, with a link to cart page
+      setSuccessAddToCartMessage(`Successfully added to cart!`);
+      setCartId(res.data.cart_id);
     })
     .catch(err => {
       console.warn('ERROR of adding to cart', err);
     });
   }; // _handleAddToCart
+
+  let showSuccessMessage = "";
+  if(successAddToCartMessage){
+    showSuccessMessage = (
+      <small className = 'show-success-mesage'>
+        {successAddToCartMessage} {' '}
+        View your <Link to={`/cart/${cartId}`} className="view-your-cart">cart</Link>
+      </small>
+    )
+  }
 
 
 
@@ -184,12 +206,10 @@ export default function Product(props){
             <ListGroup.Item>
               <Button id="add-to-cart" disabled={buttonStatus} onClick={_handleAddToCart}>{buttonText}</Button>
             </ListGroup.Item>
+            <ListGroup.Item>{showSuccessMessage}</ListGroup.Item>
           </ListGroup>
-
         </Col>
       </Row>
     </Container>
-
-
   );
 }

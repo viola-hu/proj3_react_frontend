@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import MyAccount from "./components/MyAccount";
 import Category from "./components/Category";
 import Product from "./components/Product";
+import CartConfirm from "./components/CartConfirm";
 
 
 
@@ -23,6 +24,7 @@ const Routes = (
       <Route exact path="/account" component={MyAccount}/>
       <Route exact path="/category/:id" component={Category}/>
       <Route exact path="/product/:id" component={Product}/>
+      <Route exact path="/cart/:id" component={CartConfirm}/>
 
 
 

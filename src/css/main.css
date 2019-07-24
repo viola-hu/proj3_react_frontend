@@ -84,3 +84,12 @@
   border-radius: 20px;
   padding: .375rem 3rem;
 }
+
+.view-your-cart{
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.show-success-mesage{
+  color: var(--orange);
+}
