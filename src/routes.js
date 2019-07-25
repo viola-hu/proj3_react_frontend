@@ -11,11 +11,13 @@ import MyAccount from "./components/MyAccount";
 import Category from "./components/Category";
 import Product from "./components/Product";
 import CartConfirm from "./components/CartConfirm";
+import CheckOut from "./components/CheckOut";
+import RemoveLineItem from "./components/RemoveLineItem";
 
 
 
 const Routes = (
-  <Router>
+    <Router>
     <div className="entireBody">
 
       <Route path="/" component={BootNav}/>
@@ -24,7 +26,9 @@ const Routes = (
       <Route exact path="/account" component={MyAccount}/>
       <Route exact path="/category/:id" component={Category}/>
       <Route exact path="/product/:id" component={Product}/>
-      <Route exact path="/cart/:id" component={CartConfirm}/>
+      <Route exact path="/cart" component={CartConfirm}/>
+      <Route exact path="/checkout" component={CheckOut}/>
+      <Route exact path="/removeLineItem" component={RemoveLineItem}/>
 
 
 

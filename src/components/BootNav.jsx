@@ -53,11 +53,16 @@ export default function BootNav(props){
   if(localStorage.getItem('jwt')){
     // already logged in
     buttonRight = (
-      // <Link to={'/logout'}>
+      <div>
         <Button className="btn-space" variant="info" onClick={_handleLogOut}>
           LogOut
         </Button>
-      // </Link>
+        <Link to={'/cart'}>
+          <Nav.Item className="cart-icon">
+            <div> (0) </div>
+          </Nav.Item>
+        </Link>
+      </div>
     );
   } else {
     // not yet logged in
@@ -99,9 +104,6 @@ export default function BootNav(props){
         <Nav className="mr-auto">
           {buttonLeft}
           {buttonRight}
-          <Nav.Item className="cart-icon">
-            <div> (0) </div>
-          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

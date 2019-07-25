@@ -29,7 +29,6 @@ export default function Product(props){
   const [buttonStatus, setButtonStatus] = useState(false);
   const [buttonText, setButtonText] = useState('Add to Cart');
   const [successAddToCartMessage, setSuccessAddToCartMessage] = useState('');
-  const [cartId, setCartId] = useState(null);
 
   // first time the component renders
   // axios request to get the product info by id
@@ -94,6 +93,15 @@ export default function Product(props){
 
       // check if the input quantity is more than actual stock
       // since user can manually type in the amount
+      // ********************#TODO*********************
+      // this logic is not perfect
+      // should axios request the current cart data with the existing quantity(if any, by default = 0)
+      // then compare total requested quantity (wantedQuantity + existing cart quantity) with the product stock,
+      // currently, once post request, backend is checking the total requested quantity (existing + new) to make sure <= stock
+      // if not, would send back error to .catch()
+      // it's not perfect user experience, but at least currently, at the frontend
+      // make sure user's actual type-in value is <= stock number,
+      // will leave it for now due to tight deadline, but will refactor later
       if (wantedQuantity > product.stock){
         // 1) prompt message
         setErrorMessage('Sorry, not enough stock.');
@@ -129,7 +137,7 @@ export default function Product(props){
     // if yes, propmt message, disable button and return early
     if(!quantity){
       console.log('when quantity === 0, it ran!');
-      setErrorMessage('Please select quantity.')
+      setErrorMessage('Please select a quantity.')
       setButtonStatus(true);
       return;
     }
@@ -153,10 +161,10 @@ export default function Product(props){
       console.log('added to cart',res);
       // pop up a msg to user, showing adding to cart successfully, with a link to cart page
       setSuccessAddToCartMessage(`Successfully added to cart!`);
-      setCartId(res.data.cart_id);
     })
     .catch(err => {
       console.warn('ERROR of adding to cart', err);
+      setErrorMessage('Sorry, not enough stock.')
     });
   }; // _handleAddToCart
 
@@ -165,7 +173,7 @@ export default function Product(props){
     showSuccessMessage = (
       <small className = 'show-success-mesage'>
         {successAddToCartMessage} {' '}
-        View your <Link to={`/cart/${cartId}`} className="view-your-cart">cart</Link>
+        View your <Link to={`/cart`} className="view-your-cart">cart</Link>
       </small>
     )
   }
