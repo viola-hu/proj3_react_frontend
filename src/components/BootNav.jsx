@@ -70,8 +70,11 @@ export default function BootNav(props){
   }
 
   return(
-    <Navbar expand="sm" className="bg-light justify-content-between">
-      <Navbar.Brand href="#/">V's Toy</Navbar.Brand>
+    <Navbar sticky="top" expand="md" className="bg-light justify-content-between">
+      <Navbar.Brand href="#/">
+        <div>V's Toy</div>
+        <img className="happy-kids" src={process.env.PUBLIC_URL + '/images/happy-kids.png'}/>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

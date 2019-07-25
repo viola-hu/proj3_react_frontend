@@ -67,9 +67,11 @@ function LogInForm(props){
       // once login success
       // 1) store jwt token in the localStorage
       window.localStorage.setItem('jwt', res.data.jwt);
-      // 2) hide the modal
+      // 2) send another axios request to get the cart from DB, to save in localStorage
+      getCart();
+      // 3) hide the modal
       props.onHide();
-      // 3) go to the next page
+      // 4) go to the next page
       props.history.push('/account');
     })
     .catch(err => {
@@ -77,6 +79,18 @@ function LogInForm(props){
       console.warn('!!!ERROR:', err);
       setErrorMessage('Invalid email or password')
     });
+  };
+  // **************TODO:**************
+  // once a user has logged in, either
+  // 1) along with the login token, send back user cart information: line_items
+  // 2) or, send another axios request to get the line_items information
+  // to store inside localStorage to show the shopping cart item number!
+  const getCart = ()=>{
+    console.log('send another axios request!');
+    axios.get('https://toyshoppingsite.herokuapp.com/cart')
+    // continue!!!!
+
+
   };
 
   //

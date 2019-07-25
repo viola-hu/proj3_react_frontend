@@ -64,9 +64,9 @@ export default function CheckOut(props){
               </Link>
             </td>
             <td><strong>{li.product.name}</strong></td>
-            <td>{li.quantity}</td>
-            <td>${li.product.price}</td>
-            <td>${li.quantity * li.product.price}</td>
+            <td><strong>{li.quantity}</strong></td>
+            <td><strong>${li.product.price}</strong></td>
+            <td><strong>${li.quantity * li.product.price}</strong></td>
           </tr>
         ))
       }
@@ -80,13 +80,8 @@ export default function CheckOut(props){
               </strong>
             </Link>
           </td>
-          <td>
-            <strong className="cart-label">
-              Subtotal:
-            </strong>
-            ${subtotal}
-          </td>
-          <td> </td>
+          <td><strong className="cart-label">Subtotal: </strong></td>
+          <td><strong className="cart-label">${subtotal}</strong></td>
         </tr>
         <tr>
           <td> </td>
@@ -94,7 +89,7 @@ export default function CheckOut(props){
           <td> </td>
           <td> </td>
           <td>
-            <Link to={'/'}>
+            <Link to={'/payment'}>
               <Button id="pay-by-card">Pay by Card</Button>
             </Link>
           </td>

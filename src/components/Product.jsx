@@ -24,7 +24,7 @@ export default function Product(props){
   const jwt = localStorage.getItem('jwt');
   const [product, setProduct] = useState({});
   const [category, setCategory] = useState({});
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity]= useState(1);
   const [errorMessage, setErrorMessage] = useState('');
   const [buttonStatus, setButtonStatus] = useState(false);
   const [buttonText, setButtonText] = useState('Add to Cart');
@@ -101,12 +101,12 @@ export default function Product(props){
       // if not, would send back error to .catch()
       // it's not perfect user experience, but at least currently, at the frontend
       // make sure user's actual type-in value is <= stock number,
-      // will leave it for now due to tight deadline, but will refactor later
+      // will leave it for now due to tight deadline, but will refactor late
       if (wantedQuantity > product.stock){
         // 1) prompt message
         setErrorMessage('Sorry, not enough stock.');
         // 2) the input quantity doesn't count, reset state quantity to 0
-        setQuantity(0);
+        setQuantity(1);
         // 3) disable 'Add to Cart' button, cannot click
         setButtonStatus(true);
       } else {
@@ -171,10 +171,12 @@ export default function Product(props){
   let showSuccessMessage = "";
   if(successAddToCartMessage){
     showSuccessMessage = (
-      <small className = 'show-success-mesage'>
-        {successAddToCartMessage} {' '}
-        View your <Link to={`/cart`} className="view-your-cart">cart</Link>
-      </small>
+      <Link to={`/cart`} className="view-your-cart">
+        <strong><p className = 'show-success-mesage'>
+          {successAddToCartMessage} {' '}
+          View your cart
+        </p></strong>
+      </Link>
     )
   }
 
@@ -206,7 +208,7 @@ export default function Product(props){
                 {errorMessage}
               </Form.Text>
               Select Quantity:{' '}
-              <input type="number" min="0" max={product.stock} placeholder='0' onChange={_handleChangeQuantity}/>
+              <input type="number" min="1" max={product.stock} defaultValue="1" onChange={_handleChangeQuantity}/>
               <Form.Text>
                 (In stock: {product.stock})
               </Form.Text>

@@ -44,6 +44,10 @@ export default function CartConfirm(props){
     <tbody>
       <tr>
         <td>There's no item in your cart.</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
       </tr>
     </tbody>
   );
@@ -165,7 +169,7 @@ export default function CartConfirm(props){
 
 
   return(
-    <Table responsive="md">
+    <Table striped hover responsive="md">
       <thead>
         <tr>
           <th className="cart-label"><strong>My Cart</strong></th>
@@ -195,10 +199,10 @@ export default function CartConfirm(props){
                 </Link>
               </td>
 
-              <td><strong>{li.product.name}</strong></td>
+              <td className="product-name"><br/><strong>{li.product.name}</strong></td>
 
               <td>
-                <form onSubmit={_handleUpdateQuantity}>
+                <form className="quantity-update change-quantity" onSubmit={_handleUpdateQuantity}>
                   <input
                     type="number"
                     min="1"
@@ -212,9 +216,10 @@ export default function CartConfirm(props){
                     value="Update"
                     disabled={false}
                   /> {' '}
-                </form><Image
+                </form>
+                <Image
                   name={li.id}
-                  className="trash"
+                  className="trash change-quantity"
                   src={process.env.PUBLIC_URL + '/images/small-trash.png'}
                   title="Remove"
                   onClick={_handleRemoveLineItem}
@@ -222,9 +227,9 @@ export default function CartConfirm(props){
                 />
               </td>
 
-              <td>${li.product.price}</td>
+              <td><br/><strong>${li.product.price}</strong></td>
 
-              <td>${li.quantity * li.product.price}</td>
+              <td><br/><strong>${li.quantity * li.product.price}</strong></td>
             </tr>
            ))
           }
@@ -236,8 +241,8 @@ export default function CartConfirm(props){
                 {errorMessage}
               </p>
             </td>
-            <td ><strong className="cart-label">Subtotal: </strong>${subtotal}</td>
-            <td> </td>
+            <td><strong className="cart-label">Subtotal: </strong></td>
+            <td><strong className="cart-label">${subtotal}</strong></td>
           </tr>
           <tr>
             <td> </td>

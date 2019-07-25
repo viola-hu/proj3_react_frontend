@@ -13,7 +13,8 @@ import Product from "./components/Product";
 import CartConfirm from "./components/CartConfirm";
 import CheckOut from "./components/CheckOut";
 import RemoveLineItem from "./components/RemoveLineItem";
-
+import Payment from './components/Payment.js';
+import Order from './components/Order';
 
 
 const Routes = (
@@ -29,6 +30,8 @@ const Routes = (
       <Route exact path="/cart" component={CartConfirm}/>
       <Route exact path="/checkout" component={CheckOut}/>
       <Route exact path="/removeLineItem" component={RemoveLineItem}/>
+      <Route exact path="/payment" component={Payment}/>
+      <Route exact path="/order" component={Order}/>
 
 
 

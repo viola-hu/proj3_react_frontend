@@ -1,6 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+
+.entireBody{
+  background-color: #f8f9fa;
+  font-family: 'Snowburst One', cursive;
+  font-weight: bolder;
+}
+
 .navbar{
   /* background-color: rgb(87, 223, 52) */
 
+}
+
+.happy-kids{
+  max-height: 7vh;
 }
 
 .dropdown-menu a{
@@ -70,7 +87,8 @@
 }
 
 
-#test{
+.test{
+  width:100vw;
   /* background-color: var(--indigo); */
 }
 
@@ -97,8 +115,17 @@
   text-decoration: none;
 }
 
+.view-your-cart:hover{
+  color: var(--teal);
+  text-decoration: none;
+}
+
 .show-success-mesage{
   color: var(--orange);
+}
+
+.show-success-mesage:hover{
+  color: var(--teal);
 }
 
 .cart-label{
@@ -106,7 +133,7 @@
 }
 
 .cart-thumbnail{
-  max-width: 20vw;
+  max-width: 10vw;
 }
 
 
@@ -115,7 +142,7 @@ td{
 }
 
 .trash{
-  max-height: 4vh;
+  max-height: 7vh;
 }
 
 .trash:hover{
@@ -123,6 +150,7 @@ td{
 }
 
 .update-quantity{
+  padding: .2rem .6rem;
   color:white;
   text-decoration: none;
   background-color: var(--pink);
@@ -131,6 +159,7 @@ td{
 }
 
 .update-quantity:disabled{
+  padding: .1rem .6rem;
   color: #fff;
   background-color: var(--pink);
   opacity: .65;
@@ -139,4 +168,25 @@ td{
 #back-to-cart{
   color:var(--teal);
   text-decoration: none;
+}
+
+.quantity-update{
+  display: inline-block;
+}
+
+.change-quantity{
+  vertical-align: bottom;
+}
+
+.justify-content-between{
+  padding:4vh 2vw;
+}
+
+.payment-form{
+  text-align: center;
+}
+
+.test{
+  background: url('./images/kid01.png');
+  width: 10vw;
 }
