@@ -41,7 +41,7 @@ export default function Product(props){
   },[]);
 
   const getProductById = (id)=>{
-    const URL = `http://localhost:3000/products/${id}`;
+    const URL = `https://toyshoppingsite.herokuapp.com/products/${id}`;
 
     axios.get(URL)
     .then(res => {
@@ -142,7 +142,7 @@ export default function Product(props){
       return;
     }
     // if not, then quantity is valid, send to the DB and add into the cart!
-    const URL = "http://localhost:3000/line_items";
+    const URL = "https://toyshoppingsite.herokuapp.com/line_items";
     const product_id = product.id;
     const data = {
       line_item:{

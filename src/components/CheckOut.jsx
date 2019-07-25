@@ -15,7 +15,7 @@ export default function CheckOut(props){
   // const [product, setProduct] = useState({});
 
   useEffect(()=>{
-    const URL = `http://localhost:3000/cart`;
+    const URL = `https://toyshoppingsite.herokuapp.com/cart`;
 
     const configHeader = {
       headers: {

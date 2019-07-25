@@ -18,7 +18,7 @@ export default function CartConfirm(props){
   // const [product, setProduct] = useState({});
 
   useEffect(()=>{
-    const URL = `http://localhost:3000/cart`;
+    const URL = `https://toyshoppingsite.herokuapp.com/cart`;
 
     const configHeader = {
       headers: {
@@ -104,7 +104,7 @@ export default function CartConfirm(props){
     // but for now, it might be rare, leave this for refactor later.
     // 3) send axios post request to DB, to update the single line_item
     // axios.put(url[, data[, config]])
-    const URL = `http://localhost:3000/line_items/${lineItemId}`;
+    const URL = `https://toyshoppingsite.herokuapp.com/line_items/${lineItemId}`;
     const data = {
       line_item: {
         quantity: updatedQuantity
@@ -144,7 +144,7 @@ export default function CartConfirm(props){
 
     // send delete request to DB with line_item id
     // axios.delete(url[, config])
-    const URL = `http://localhost:3000/line_items/${lineItemId}`;
+    const URL = `https://toyshoppingsite.herokuapp.com/line_items/${lineItemId}`;
 
     const configHeader = {
       headers: {

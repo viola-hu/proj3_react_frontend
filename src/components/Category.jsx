@@ -32,7 +32,7 @@ export default function Category(props){
   const getProductsOfCategory = ()=>{
     // console.log('make axios request!');
 
-    const URL = `http://localhost:3000/categories/${id}`;
+    const URL = `https://toyshoppingsite.herokuapp.com/categories/${id}`;
 
     // LEARNING:
     // category page doesn't need user authentication, thus no need to include jwt inside Header

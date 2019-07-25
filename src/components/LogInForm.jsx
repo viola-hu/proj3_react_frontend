@@ -46,7 +46,7 @@ function LogInForm(props){
   const performLogIn = () => {
     // console.log('email:', email);
     // console.log('password:', password); // tested ok!
-    const URL = "http://localhost:3000/user_token";
+    const URL = "https://toyshoppingsite.herokuapp.com/user_token";
     const data = {
       auth: {
         email,
@@ -112,7 +112,7 @@ function LogInForm(props){
 }
 
 // using Curl in the bash to test - SUCCESS!
-// curl -X POST "http://localhost:3000/user_token" -d '{"auth": {"email": "lily@lily.com", "password": "chicken"}}' -H "Content-Type: application/json"
+// curl -X POST "https://toyshoppingsite.herokuapp.com/user_token" -d '{"auth": {"email": "lily@lily.com", "password": "chicken"}}' -H "Content-Type: application/json"
 
 
 export default withRouter(LogInForm);
