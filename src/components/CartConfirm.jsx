@@ -189,7 +189,7 @@ export default function CartConfirm(props){
                 <Link to={`/product/${li.product_id}`}>
                   <Image
                     className="cart-thumbnail"
-                    src={`/images/${li.product.image}`}
+                    src={process.env.PUBLIC_URL +`/images/${li.product.image}`}
                     thumbnail
                   />
                 </Link>
@@ -215,7 +215,7 @@ export default function CartConfirm(props){
                 </form><Image
                   name={li.id}
                   className="trash"
-                  src={'/images/small-trash.png'}
+                  src={process.env.PUBLIC_URL + '/images/small-trash.png'}
                   title="Remove"
                   onClick={_handleRemoveLineItem}
                   fluid

@@ -58,9 +58,7 @@ export default function BootNav(props){
           LogOut
         </Button>
         <Link to={'/cart'}>
-          <Nav.Item className="cart-icon">
-            <div> (0) </div>
-          </Nav.Item>
+          <img className="cart-icon" src={process.env.PUBLIC_URL +`/images/cart-icon.png`}></img>
         </Link>
       </div>
     );

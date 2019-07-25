@@ -188,7 +188,7 @@ export default function Product(props){
             <Figure.Image
               fluid={true}
               alt="500x500"
-              src={`/images/${product.image}`}
+              src={process.env.PUBLIC_URL +`/images/${product.image}`}
             />
             <Figure.Caption>
               {product.description}

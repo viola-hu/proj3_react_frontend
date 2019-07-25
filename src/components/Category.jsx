@@ -68,7 +68,7 @@ export default function Category(props){
                     height={200}
                     fluid={false}
                     alt="200x200"
-                    src={`/images/${product.image}`}
+                    src={process.env.PUBLIC_URL + `/images/${product.image}`}
                   />
                   <Figure.Caption>
                     <p><strong>{product.name}</strong></p>

@@ -21,7 +21,7 @@ return(
           <tr>
             <td>
               <Link to={`/product/${li.product_id}`}>
-                <Image className="cart-thumbnail" src={`/images/${li.product.image}`} thumbnail />
+                <Image className="cart-thumbnail" src={process.env.PUBLIC_URL +`/images/${li.product.image}`} thumbnail />
               </Link>
             </td>
             <td><strong>{li.product.name}</strong></td>
