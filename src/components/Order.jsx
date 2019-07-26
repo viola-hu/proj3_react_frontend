@@ -48,7 +48,7 @@ export default function Order(props){
     <div>
       <div className="success-purchase">
         <strong>Thanks for Purchase!</strong> {' '}
-        <Link className="success-purchase-link"to={'/'}>
+        <Link className="success-purchase-link" to={'/category/4'}>
           <strong>Find More Toys?!</strong>
         </Link>
       </div>
@@ -93,7 +93,7 @@ export default function Order(props){
             <td> </td>
             <td> </td>
             <td>
-              <Link to={'/'}>
+              <Link to={'/category/4'}>
                 <Button className="back-to-home">Find More Toys</Button>
               </Link>
             </td>
