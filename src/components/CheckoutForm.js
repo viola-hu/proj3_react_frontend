@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 
 import Order from './Order';
 
+// fake that it's paid!
 function CheckoutForm(props){
   // const[message, setMessage] = useState('');
 
@@ -32,7 +33,7 @@ function CheckoutForm(props){
     axios.get(URL, configHeader)
     .then(res => {
       console.log('response:', res);
-
+      
     })
     .catch(err => {
 

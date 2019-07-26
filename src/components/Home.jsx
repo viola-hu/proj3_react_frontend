@@ -32,28 +32,30 @@ export default function Home(props){
 
   return(
     <div>
-      <Image className="test" src={process.env.PUBLIC_URL +`/images/playingkids.jpg`} fluid />
+      <Image className="home-image" src={process.env.PUBLIC_URL +`/images/playingkids.jpg`} fluid />
 
 
-    <Container>
-      <Row>
-        <Col>
-        </Col>
-      </Row>
-      <Row>
-        <Col>1 of 2</Col>
-        <Col>2 of 2</Col>
-        <Col>1 of 3</Col>
-        <Col>2 of 3</Col>
-        <Col>3 of 3</Col>
-      </Row>
-      <Row>
-        <Col>1 of 3</Col>
-        <Col>2 of 3</Col>
-        <Col>3 of 3</Col>
-      </Row>
-    </Container>
   </div>
-    
+
   );
 }
+
+
+// <Container>
+//   <Row>
+//     <Col>
+//     </Col>
+//   </Row>
+//   <Row>
+//     <Col>1 of 2</Col>
+//     <Col>2 of 2</Col>
+//     <Col>1 of 3</Col>
+//     <Col>2 of 3</Col>
+//     <Col>3 of 3</Col>
+//   </Row>
+//   <Row>
+//     <Col>1 of 3</Col>
+//     <Col>2 of 3</Col>
+//     <Col>3 of 3</Col>
+//   </Row>
+// </Container>
