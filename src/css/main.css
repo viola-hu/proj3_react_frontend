@@ -190,3 +190,7 @@ td{
   /* background: url('./images/kid01.png'); */
   width: 10vw;
 }
+
+.home-image{
+  width:100%;
+}
