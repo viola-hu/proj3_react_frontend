@@ -31,12 +31,7 @@ export default function Home(props){
 
 
   return(
-    <div>
-      <Image className="home-image" src={process.env.PUBLIC_URL +`/images/playingkids.jpg`} fluid />
-
-
-  </div>
-
+    <Image className="home-image" src={process.env.PUBLIC_URL +`/images/playingkids.jpg`} fluid />
   );
 }
 

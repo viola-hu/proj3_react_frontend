@@ -149,13 +149,17 @@ td{
   cursor: pointer;
 }
 
-.update-quantity{
+.back-to-home, .update-quantity{
   padding: .2rem .6rem;
   color:white;
   text-decoration: none;
   background-color: var(--pink);
   border:none;
   border-radius: 20px;
+}
+
+.back-to-home:hover{
+  background-color: var(--teal);
 }
 
 .update-quantity:disabled{
@@ -187,10 +191,23 @@ td{
 }
 
 .test{
-  /* background: url('./images/kid01.png'); */
-  width: 10vw;
+  background: url(../images/cart-icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .home-image{
-  width:100%;
+  width:100vw;
+}
+
+.success-purchase-link, .success-purchase{
+  color:var(--cyan);
+}
+
+.success-purchase-link{
+  text-decoration: none;
+}
+.success-purchase-link:hover{
+  text-decoration: none;
+  color:var(--pink);
 }

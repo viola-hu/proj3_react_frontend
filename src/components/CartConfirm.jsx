@@ -26,6 +26,7 @@ export default function CartConfirm(props){
       },
     };
 
+    // console.log('%c get CART', 'font-size: 20pt');
     axios.get(URL, configHeader)
     .then(res => {
       console.log('response:', res.data); // an array of all line_item objects of the cart / current_user

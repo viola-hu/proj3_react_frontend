@@ -44,8 +44,9 @@ export default function Category(props){
 
     axios.get(URL) //, configHeader
     .then(res => {
-      console.log('response:', res.data.products);// an array of products items
-      setProducts(res.data.products);
+      // console.log('!!!res is :', res);
+      console.log('get all the products response:', res.data);// an array of products items
+      setProducts(res.data);
     })
     .catch(err => {
       console.warn('ERRORS!!!:', err);

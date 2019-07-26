@@ -31,7 +31,7 @@ const Routes = (
       <Route exact path="/checkout" component={CheckOut}/>
       <Route exact path="/removeLineItem" component={RemoveLineItem}/>
       <Route exact path="/payment" component={Payment}/>
-      <Route exact path="/order" component={Order}/>
+      <Route exact path="/order/:id" component={Order}/>
 
 
 

@@ -72,7 +72,7 @@ function LogInForm(props){
       // 3) hide the modal
       props.onHide();
       // 4) go to the next page
-      props.history.push('/account');
+      props.history.push('/category/1');
     })
     .catch(err => {
       // if any error, update state and print out in UI

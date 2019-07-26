@@ -12,14 +12,13 @@ function CheckoutForm(props){
 
   const submit = () =>{
     // setMessage('Congrats! Purchase complete!')
-    // 1) send to server to move line_items from cart into order
-    moveLineItemsFromCartToOrder();
-
-    // 2) redirect to order page, and show messages there!
-    props.history.push('/order')
+    // send to server to move line_items from cart into order
+    // also update product stock!
+    moveLineItemsFromCartToOrderAndUpdateStock();
   };
 
-  const moveLineItemsFromCartToOrder = ()=>{
+
+  const moveLineItemsFromCartToOrderAndUpdateStock = ()=>{
     const URL = `https://toyshoppingsite.herokuapp.com/order`;
 
     const jwt = localStorage.getItem('jwt');
@@ -32,11 +31,17 @@ function CheckoutForm(props){
 
     axios.get(URL, configHeader)
     .then(res => {
-      console.log('response:', res);
-      
+      console.log('response of success order id:', res.data.id);
+
+      // get the order_id from response, and redirect!
+      const orderId = res.data.id
+      // 1) if order succeed, redirect to order page, and show messages there!
+      props.history.push(`/order/${orderId}`)
     })
     .catch(err => {
-
+      // 2) if order failed, show message like out of order!
+      // ************TODO****************
+      console.warn('ERROR!');
     });
   };
 
