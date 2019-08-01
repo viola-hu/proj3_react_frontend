@@ -25,7 +25,7 @@ export default function Category(props){
   // whenever the props id changes, useEffect will catch that change and render the whole page
   // even for the first time the component renders
   useEffect(()=>{
-    getProductsOfCategory(id);
+    getProductsOfCategory();
   },[id]);
 
 
