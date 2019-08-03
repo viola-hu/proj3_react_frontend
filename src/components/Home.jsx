@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import url from '../lib/url';
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -12,7 +13,9 @@ export default function Home(props){
   const[products, setProducts] = useState([]);
 
   useEffect(() => {
-    const URL = `https://toyshoppingsite.herokuapp.com/products`;
+    // const URL = `https://toyshoppingsite.herokuapp.com/products`;
+    // const URL = `http://localhost:3000/products`;
+    const URL = `${url.URL}/products`;
 
     axios.get(URL)
     .then(res => {

@@ -2,9 +2,11 @@ import React, {useState} from 'react';
 import { withRouter } from 'react-router-dom';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import axios from 'axios';
+import url from '../lib/url';
+import Order from './Order';
+
 import Button from "react-bootstrap/Button";
 
-import Order from './Order';
 
 // fake that it's paid!
 function CheckoutForm(props){
@@ -19,7 +21,9 @@ function CheckoutForm(props){
 
 
   const moveLineItemsFromCartToOrderAndUpdateStock = ()=>{
-    const URL = `https://toyshoppingsite.herokuapp.com/order`;
+    // const URL = `https://toyshoppingsite.herokuapp.com/order`;
+    // const URL = `http://localhost:3000/order`;
+    const URL = `${url.URL}/order`;
 
     const jwt = localStorage.getItem('jwt');
 

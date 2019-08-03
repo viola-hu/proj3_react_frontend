@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
+import url from '../lib/url';
 
 import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
@@ -20,7 +21,8 @@ export default function Order(props){
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const URL = `https://toyshoppingsite.herokuapp.com/order/${orderId}`;
+    // const URL = `https://toyshoppingsite.herokuapp.com/order/${orderId}`;
+    const URL = `${url.URL}/order/${orderId}`;
 
     const configHeader = {
       headers: {

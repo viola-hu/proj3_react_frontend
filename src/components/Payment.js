@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import {Elements, StripeProvider} from 'react-stripe-elements';
-import CheckoutForm from './CheckoutForm';
+import CheckoutForm from './CheckoutFormTODO';
 
 class Payment extends Component {
+
+  // StripeProvider is what actually creates the Stripe instance
+  // and passes in your API key.
   render() {
     return (
-      <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+      <StripeProvider apiKey="pk_test_dBB7Zc6zujggRBFHQUdShiJg00Ee8VeuNR">
         <div className="payment-form">
           <h1>Payment Form</h1>
           <div className="payment-form">

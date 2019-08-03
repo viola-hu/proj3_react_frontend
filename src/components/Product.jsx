@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
+import url from '../lib/url';
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -41,7 +42,9 @@ export default function Product(props){
   },[]);
 
   const getProductById = (id)=>{
-    const URL = `https://toyshoppingsite.herokuapp.com/products/${id}`;
+    // const URL = `https://toyshoppingsite.herokuapp.com/products/${id}`;
+    // const URL = `http://localhost:3000/products/${id}`;
+    const URL = `${url.URL}/products/${id}`;
 
     axios.get(URL)
     .then(res => {
@@ -142,7 +145,9 @@ export default function Product(props){
       return;
     }
     // if not, then quantity is valid, send to the DB and add into the cart!
-    const URL = "https://toyshoppingsite.herokuapp.com/line_items";
+    // const URL = "https://toyshoppingsite.herokuapp.com/line_items";
+    // const URL = "http://localhost:3000/line_items";
+    const URL = `${url.URL}/line_items`;
     const product_id = product.id;
     const data = {
       line_item:{

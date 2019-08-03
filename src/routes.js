@@ -12,7 +12,6 @@ import Category from "./components/Category";
 import Product from "./components/Product";
 import CartConfirm from "./components/CartConfirm";
 import CheckOut from "./components/CheckOut";
-import RemoveLineItem from "./components/RemoveLineItem";
 import Payment from './components/Payment.js';
 import Order from './components/Order';
 
@@ -22,14 +21,12 @@ const Routes = (
     <div className="entireBody">
 
       <Route path="/" component={BootNav}/>
-
       <Route exact path="/" component={Home}/>
       <Route exact path="/account" component={MyAccount}/>
       <Route exact path="/category/:id" component={Category}/>
       <Route exact path="/product/:id" component={Product}/>
       <Route exact path="/cart" component={CartConfirm}/>
       <Route exact path="/checkout" component={CheckOut}/>
-      <Route exact path="/removeLineItem" component={RemoveLineItem}/>
       <Route exact path="/payment" component={Payment}/>
       <Route exact path="/order/:id" component={Order}/>
 

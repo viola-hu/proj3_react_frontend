@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import url from '../lib/url';
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -12,6 +13,8 @@ import FigureCaption from "react-bootstrap/FigureCaption";
 
 
 export default function Category(props){
+
+  console.log('url is', url.URL);
 
   const {id} = props.match.params;
   // LEARNING: same as below
@@ -32,7 +35,9 @@ export default function Category(props){
   const getProductsOfCategory = ()=>{
     // console.log('make axios request!');
 
-    const URL = `https://toyshoppingsite.herokuapp.com/categories/${id}`;
+    // const URL = `https://toyshoppingsite.herokuapp.com/categories/${id}`;
+    // const URL = `http://localhost:3000/categories/${id}`;
+    const URL = `${url.URL}/categories/${id}`;
 
     // LEARNING:
     // category page doesn't need user authentication, thus no need to include jwt inside Header

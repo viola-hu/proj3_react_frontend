@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
+import url from '../lib/url';
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -46,7 +47,9 @@ function LogInForm(props){
   const performLogIn = () => {
     // console.log('email:', email);
     // console.log('password:', password); // tested ok!
-    const URL = "https://toyshoppingsite.herokuapp.com/user_token";
+    // const URL = "https://toyshoppingsite.herokuapp.com/user_token";
+    // const URL = "http://localhost:3000/user_token";
+    const URL = `${url.URL}/user_token`;
     const data = {
       auth: {
         email,
@@ -87,8 +90,11 @@ function LogInForm(props){
   // to store inside localStorage to show the shopping cart item number!
   const getCart = ()=>{
     console.log('send another axios request!');
-    axios.get('https://toyshoppingsite.herokuapp.com/cart')
+    // axios.get('https://toyshoppingsite.herokuapp.com/cart')
+    // axios.get('http://localhost:3000/cart')
     // continue!!!!
+    // **************TODO:**************
+    // axios.get(`${url.URL}/cart`)
 
 
   };

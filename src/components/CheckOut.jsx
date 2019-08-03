@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
+import url from '../lib/url';
 
 import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
@@ -15,7 +16,8 @@ export default function CheckOut(props){
   // const [product, setProduct] = useState({});
 
   useEffect(()=>{
-    const URL = `https://toyshoppingsite.herokuapp.com/cart`;
+    // const URL = `https://toyshoppingsite.herokuapp.com/cart`;
+    const URL = `${url.URL}/cart`;
 
     const configHeader = {
       headers: {

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
+import url from '../lib/url';
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -44,7 +45,8 @@ function SignUpForm(props){
   const _handleSubmit = (event) => {
     event.preventDefault();
 
-    const URL = "https://toyshoppingsite.herokuapp.com/signup";
+    // const URL = "https://toyshoppingsite.herokuapp.com/signup";
+    const URL = `${url.URL}/signup`;
 
     const data = {
       user:{
@@ -68,7 +70,8 @@ function SignUpForm(props){
 
 // *********************************************
   const getTokenAndRedirect = () => {
-    const URL = "https://toyshoppingsite.herokuapp.com/user_token";
+    // const URL = "https://toyshoppingsite.herokuapp.com/user_token";
+    const URL = `${url.URL}/user_token`;
     const data = {
       auth: {
         email,
