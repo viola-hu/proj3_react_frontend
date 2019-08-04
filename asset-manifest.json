@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/proj3_react_frontend/static/css/main.12b99989.chunk.css",
-    "main.js": "/proj3_react_frontend/static/js/main.865d5475.chunk.js",
-    "main.js.map": "/proj3_react_frontend/static/js/main.865d5475.chunk.js.map",
+    "main.css": "/proj3_react_frontend/static/css/main.4c3b07c7.chunk.css",
+    "main.js": "/proj3_react_frontend/static/js/main.f965d800.chunk.js",
+    "main.js.map": "/proj3_react_frontend/static/js/main.f965d800.chunk.js.map",
     "runtime~main.js": "/proj3_react_frontend/static/js/runtime~main.9aa6579d.js",
     "runtime~main.js.map": "/proj3_react_frontend/static/js/runtime~main.9aa6579d.js.map",
-    "static/js/2.69b5ed99.chunk.js": "/proj3_react_frontend/static/js/2.69b5ed99.chunk.js",
-    "static/js/2.69b5ed99.chunk.js.map": "/proj3_react_frontend/static/js/2.69b5ed99.chunk.js.map",
+    "static/js/2.7a461f36.chunk.js": "/proj3_react_frontend/static/js/2.7a461f36.chunk.js",
+    "static/js/2.7a461f36.chunk.js.map": "/proj3_react_frontend/static/js/2.7a461f36.chunk.js.map",
     "index.html": "/proj3_react_frontend/index.html",
-    "precache-manifest.11c5e8daf0b0506b005a0d97e53cb10f.js": "/proj3_react_frontend/precache-manifest.11c5e8daf0b0506b005a0d97e53cb10f.js",
+    "precache-manifest.41b60c00a5e0b896b18ed1d03c0aefe0.js": "/proj3_react_frontend/precache-manifest.41b60c00a5e0b896b18ed1d03c0aefe0.js",
     "service-worker.js": "/proj3_react_frontend/service-worker.js",
-    "static/css/main.12b99989.chunk.css.map": "/proj3_react_frontend/static/css/main.12b99989.chunk.css.map",
+    "static/css/main.4c3b07c7.chunk.css.map": "/proj3_react_frontend/static/css/main.4c3b07c7.chunk.css.map",
     "static/media/main.css": "/proj3_react_frontend/static/media/cart-icon.23dfd1fb.png"
   }
 }
