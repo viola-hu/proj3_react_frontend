@@ -3,6 +3,12 @@ import {withRouter} from 'react-router-dom';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import axios from 'axios';
 import url from '../lib/url';
+import ModalHint from './ModalHint';
+
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -32,8 +38,19 @@ class CheckoutForm extends Component {
     // ***************************************************
 
     // 3) the below line won't run, until the above line created a token and stored into the variable 'token', -> that's what await does!!!
-    console.log('****** This is Stripe Token: *****', token.id); // tested fine!
+    console.log('****** token *****', token); // tested fine!
 
+    // some invalid card number will be recognised by stripe automatically during user input,
+    // while some numbers cannot generate Stripe token at all.
+    // to avoid crash, insert message and return function.
+    if(!token){
+      this.setState({
+        message:'Invalid card information. Please contact your card issuer for more details.'
+      });
+      return;
+    }
+
+    console.log('****** This is Stripe Token: *****', token.id); // tested fine!
 
     // Only after the above token is generated, will then run the below code and post the data including the token to server, to actually make the charge!
 
@@ -70,12 +87,11 @@ class CheckoutForm extends Component {
         // 1) move line_items from cart into order
         // 2) also update product stock!
         // 3) at last redirect to order page!
-        // TODO:
+        // ********** TODO: **************
         // doing the below in a separate axios request as previously have already built the below process based on faking Successful payment
         // will need to minimise the axios request and do logic process at the backend in one step once payment is successful.
         // for now, using the already built process as a separate step due to tight deadline
         moveLineItemsFromCartToOrderAndUpdateStock();
-
       }
     })
     .catch(err => {
@@ -109,7 +125,6 @@ class CheckoutForm extends Component {
       })
       .catch(err => {
         // 2) if order failed, show message like out of order!
-        // ************TODO****************
         console.warn('ERROR!', err);
       });
     };
@@ -118,14 +133,39 @@ class CheckoutForm extends Component {
 
 
   render(){
+    let errorMessage = (
+      <p className="errorMessage"><small>
+        {this.state.message}
+      </small></p>
+    );
 
     return (
       <div className="payment-form">
-        <p>Would you like to complete the purchase?</p>
-        <div style={{borderRadius: '0.5em', height: '100px', padding: '50px', border: '3px solid orange', marginTop: '10px', marginBottom: '30px',  backgroundColor: 'aliceblue', width:'500px'}} >
-          <CardElement />
-        </div>
-        <button onClick={this.submit}>Send</button>
+        <Container>
+          <Row>
+            <Col>
+              <p className="enter-details">Enter Card Details</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              {errorMessage}
+            </Col>
+          </Row>
+          <Row>
+            <Col className="stripe-form">
+              <CardElement />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={7} className="submit-button-container">
+              <button className="submit-button" onClick={this.submit}><h5>Submit</h5></button>
+            </Col>
+            <Col md={5} className="hint-button-container">
+              <ModalHint/>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

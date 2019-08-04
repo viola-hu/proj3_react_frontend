@@ -120,7 +120,7 @@
   text-decoration: none;
 }
 
-.show-success-mesage{
+.cart-label, .show-success-mesage{
   color: var(--orange);
 }
 
@@ -128,9 +128,6 @@
   color: var(--teal);
 }
 
-.cart-label{
-  color: var(--orange);
-}
 
 .cart-thumbnail{
   max-width: 10vw;
@@ -187,7 +184,61 @@ td{
 }
 
 .payment-form{
+  color: var(--orange);
   text-align: center;
+}
+
+.stripe-form{
+  margin: 2rem auto;
+  border-radius: 2em;
+  /* height: 100px; */
+  padding: 2em;
+  border: 3px dashed lightgoldenrodyellow;
+  /* margin-top: 10px; */
+  /* margin-bottom: 30px; */
+  background-color: rgba(249, 165, 188, 0.7);
+  min-width: 20em;
+  max-width: 40em;
+}
+
+.submit-button{
+  border-radius: 2em;
+  padding: 1em 2em;
+  border: 3px dashed lightgoldenrodyellow;
+  background-color: rgba(249, 165, 188, 0.7);
+  min-width: 24em;
+  /* margin: auto; */
+  /* display: inline-block; */
+  color:rgb(136, 133, 133);
+  font-weight: 800;
+  outline: none !important;
+}
+
+
+
+.hint-button{
+  border-radius: 2em;
+  padding: 1em 2em;
+  border: 3px dashed lightgoldenrodyellow;
+  background-color: rgba(249, 165, 188, 0.7);
+  min-width: 14em;
+  color:rgb(136, 133, 133);
+  outline: none !important;
+  /* margin: auto; */
+  /* display: inline-block; */
+}
+
+.submit-button:hover, .hint-button:hover{
+  background-color: ivory;
+  color:rgb(136, 133, 133);
+  border-color: rgba(249, 165, 188, 0.7);
+}
+
+.hint-button-container{
+  text-align: left;
+}
+.submit-button-container{
+  text-align: right;
 }
 
 .test{
@@ -210,4 +261,20 @@ td{
 .success-purchase-link:hover{
   text-decoration: none;
   color:var(--pink);
+}
+
+.note{
+  color:rgb(136, 133, 133);
+  text-align: left;
+}
+
+.enter-details{
+  margin-bottom: auto;
+  color:rgb(136, 133, 133);
+}
+
+.errorMessage{
+  color:red;
+  margin-top: 1rem;
+  margin-bottom: auto;
 }

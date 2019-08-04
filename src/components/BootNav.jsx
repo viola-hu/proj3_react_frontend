@@ -24,10 +24,14 @@ export default function BootNav(props){
   const [jwt, setJwt] = useState(localStorage.getItem('jwt'));
 
   const _handleLogOut = () => {
-    // 1) actually remove localStorage
+    // 1) clear localStorage : jwt, cart, userName
     localStorage.removeItem('jwt');
+    localStorage.removeItem('cart');
+    localStorage.removeItem('userName');
+
     // 2) update state, so BootNav can re-render
     setJwt('');
+
     // 3) redirect to Home
     props.history.push('/');
   }
