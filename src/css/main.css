@@ -278,3 +278,24 @@ td{
   margin-top: 1rem;
   margin-bottom: auto;
 }
+
+.about-image{
+  width:100vw;
+  /* position:absolute;
+  bottom:0; */
+}
+
+.about-container{
+  height: 100vh
+}
+
+.shop-contact{
+  margin:1rem;
+}
+/* .row{
+  margin: 1rem auto;
+} */
+
+.about-welcome{
+  margin: 1rem auto;
+}

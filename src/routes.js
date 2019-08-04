@@ -7,6 +7,7 @@ import BootNav from './components/BootNav';
 // import Image from "react-bootstrap/Image";
 
 import Home from "./components/Home";
+import About from "./components/About";
 import MyAccount from "./components/MyAccount";
 import Category from "./components/Category";
 import Product from "./components/Product";
@@ -22,6 +23,7 @@ const Routes = (
 
       <Route path="/" component={BootNav}/>
       <Route exact path="/" component={Home}/>
+      <Route exact path="/about" component={About}/>
       <Route exact path="/account" component={MyAccount}/>
       <Route exact path="/category/:id" component={Category}/>
       <Route exact path="/product/:id" component={Product}/>
