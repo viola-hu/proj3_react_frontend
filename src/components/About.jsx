@@ -8,6 +8,9 @@ import Image from "react-bootstrap/Image";
 
 
 export default function About(props){
+
+
+
   return(
     <div className="about-container">
       <Container>
@@ -63,7 +66,8 @@ export default function About(props){
           </Col>
 
           <Col>
-            row 2, col 2
+            <h1>My Google Map</h1>
+            <div id="map"></div>
           </Col>
         </Row>
       </Container>
