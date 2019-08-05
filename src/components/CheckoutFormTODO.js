@@ -158,10 +158,10 @@ class CheckoutForm extends Component {
             </Col>
           </Row>
           <Row>
-            <Col md={7} className="submit-button-container">
+            <Col md={6} className="submit-button-container">
               <button className="submit-button" onClick={this.submit}><h5>Submit</h5></button>
             </Col>
-            <Col md={5} className="hint-button-container">
+            <Col md={6} className="hint-button-container">
               <ModalHint/>
             </Col>
           </Row>

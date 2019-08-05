@@ -184,8 +184,12 @@ td{
 }
 
 .payment-form{
-  color: var(--orange);
   text-align: center;
+}
+
+.payment-form-title{
+  color: yellowgreen;
+  font-weight: 600;
 }
 
 .stripe-form{
@@ -206,7 +210,7 @@ td{
   padding: 1em 2em;
   border: 3px dashed lightgoldenrodyellow;
   background-color: rgba(249, 165, 188, 0.7);
-  min-width: 24em;
+  min-width: 19em;
   /* margin: auto; */
   /* display: inline-block; */
   color:rgb(136, 133, 133);
@@ -221,7 +225,7 @@ td{
   padding: 1em 2em;
   border: 3px dashed lightgoldenrodyellow;
   background-color: rgba(249, 165, 188, 0.7);
-  min-width: 14em;
+  min-width: 19em;
   color:rgb(136, 133, 133);
   outline: none !important;
   /* margin: auto; */
@@ -270,7 +274,7 @@ td{
 
 .enter-details{
   margin-bottom: auto;
-  color:rgb(136, 133, 133);
+  color:yellowgreen;
 }
 
 .errorMessage{
@@ -286,11 +290,12 @@ td{
 }
 
 .about-container{
-  height: 100vh
+  height: 100vh;
+  color:gray;
 }
 
 .shop-contact{
-  margin:1rem;
+  margin:0 0 0 4rem;
 }
 /* .row{
   margin: 1rem auto;
@@ -298,4 +303,18 @@ td{
 
 .about-welcome{
   margin: 1rem auto;
+}
+
+.about-title{
+  color:pink;
+  font-weight: 600;
+}
+
+.info-window{
+  color:orange;
+}
+
+.shop-title{
+  color:yellowgreen;
+  font-weight: 600;
 }

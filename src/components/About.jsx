@@ -1,4 +1,5 @@
 import React from 'react';
+import MapContainer from './GoogleMaps';
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -16,7 +17,7 @@ export default function About(props){
       <Container>
         <Row className="about-welcome">
           <Col style={{textAlign:"center"}}>
-            <h1>Welcome to V's Toy!</h1>
+            <h1 className="about-title">Welcome to V's Toy!</h1>
           </Col>
         </Row>
         <Row className="about-welcome">
@@ -28,11 +29,15 @@ export default function About(props){
         </Row>
 
         <Row>
-          <Col>
+          <Col sm={12} md={6}>
+            <Row className="shop-contact">
+                <h5 className="shop-title">
+                  <Image style={{width:"2.5rem"}} src={process.env.PUBLIC_URL +`/images/icon-shop.png`} /> {' '}
+                  V's Toy - QVB
+                </h5>
+            </Row>
             <Row className="shop-contact">
               <p>
-                <Image style={{width:"2.5rem"}} src={process.env.PUBLIC_URL +`/images/icon-shop.png`} /> {' '}
-                V's Toy - QVB <br/>
                 455 George St, Sydney NSW 2000
               </p>
             </Row>
@@ -47,9 +52,13 @@ export default function About(props){
               </p>
             </Row>
             <Row className="shop-contact">
-              <p>
+              <h5 className="shop-title">
                 <Image style={{width:"2.5rem"}} src={process.env.PUBLIC_URL +`/images/icon-shop.png`} /> {' '}
-                V's Toy - The Rocks <br/>
+                V's Toy - The Rocks
+              </h5>
+            </Row>
+            <Row className="shop-contact">
+              <p>
                 80 George St, The Rocks NSW 2000
               </p>
             </Row>
@@ -65,14 +74,14 @@ export default function About(props){
             </Row>
           </Col>
 
-          <Col>
-            <h1>My Google Map</h1>
-            <div id="map"></div>
+          <Col sm={12} md={6}>
+              <MapContainer/>
           </Col>
         </Row>
       </Container>
 
-      <Image className="about-image" src={process.env.PUBLIC_URL +`/images/happykidsplaying05.png`} />
     </div>
   );
 }
+
+// <Image className="about-image" src={process.env.PUBLIC_URL +`/images/happykidsplaying05.png`} />

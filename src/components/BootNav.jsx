@@ -42,7 +42,7 @@ export default function BootNav(props){
     buttonLeft = (
       <Link to={'/account'}>
         <Button className="btn-space" variant="warning">
-          MyAccount
+          Account
         </Button>
       </Link>
     );
