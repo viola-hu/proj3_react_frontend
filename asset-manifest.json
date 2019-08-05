@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/proj3_react_frontend/static/css/main.c2dd5e24.chunk.css",
-    "main.js": "/proj3_react_frontend/static/js/main.5ee8030e.chunk.js",
-    "main.js.map": "/proj3_react_frontend/static/js/main.5ee8030e.chunk.js.map",
+    "main.css": "/proj3_react_frontend/static/css/main.3d243bb9.chunk.css",
+    "main.js": "/proj3_react_frontend/static/js/main.f4b43c44.chunk.js",
+    "main.js.map": "/proj3_react_frontend/static/js/main.f4b43c44.chunk.js.map",
     "runtime~main.js": "/proj3_react_frontend/static/js/runtime~main.9aa6579d.js",
     "runtime~main.js.map": "/proj3_react_frontend/static/js/runtime~main.9aa6579d.js.map",
-    "static/js/2.56290f34.chunk.js": "/proj3_react_frontend/static/js/2.56290f34.chunk.js",
-    "static/js/2.56290f34.chunk.js.map": "/proj3_react_frontend/static/js/2.56290f34.chunk.js.map",
+    "static/js/2.d3d2d3f1.chunk.js": "/proj3_react_frontend/static/js/2.d3d2d3f1.chunk.js",
+    "static/js/2.d3d2d3f1.chunk.js.map": "/proj3_react_frontend/static/js/2.d3d2d3f1.chunk.js.map",
     "index.html": "/proj3_react_frontend/index.html",
-    "precache-manifest.245c629df15a8262515fc349906b55ec.js": "/proj3_react_frontend/precache-manifest.245c629df15a8262515fc349906b55ec.js",
+    "precache-manifest.01ad361679868658504bc098451e473b.js": "/proj3_react_frontend/precache-manifest.01ad361679868658504bc098451e473b.js",
     "service-worker.js": "/proj3_react_frontend/service-worker.js",
-    "static/css/main.c2dd5e24.chunk.css.map": "/proj3_react_frontend/static/css/main.c2dd5e24.chunk.css.map",
+    "static/css/main.3d243bb9.chunk.css.map": "/proj3_react_frontend/static/css/main.3d243bb9.chunk.css.map",
     "static/media/main.css": "/proj3_react_frontend/static/media/cart-icon.23dfd1fb.png"
   }
 }
