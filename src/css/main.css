@@ -342,3 +342,17 @@ td{
 .found-no-toys-row{
   text-align: center;
 }
+
+
+.update-account{
+  border: none;
+  color: turquoise;
+  font-weight: 600;
+}
+
+.delete-account{
+  border: none;
+  color: grey;
+  font-weight: 600;
+
+}

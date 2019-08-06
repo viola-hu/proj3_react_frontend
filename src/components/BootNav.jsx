@@ -30,8 +30,10 @@ export default function BootNav(props){
   const _handleLogOut = () => {
     // 1) clear localStorage : jwt, cart, userName
     localStorage.removeItem('jwt');
-    localStorage.removeItem('cart');
+    localStorage.removeItem('userEmail');
     localStorage.removeItem('userName');
+    localStorage.removeItem('totalProductsNumberInCart');
+
 
     // 2) update state, so BootNav can re-render
     setJwt('');

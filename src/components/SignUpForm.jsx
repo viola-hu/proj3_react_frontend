@@ -86,9 +86,16 @@ function SignUpForm(props){
       // once login success
       // 1) store jwt token in the localStorage
       window.localStorage.setItem('jwt', res.data.jwt);
-      // 2) hide the modal
+      // 2) store cart line_item number into localStorage
+      // in order to show on the top right - shopping bag
+      // as the user just sign up, the cart's line items number should be "0"
+      window.localStorage.setItem('totalProductsNumberInCart', 0);
+      // 3) store user name + email into localStorage
+      window.localStorage.setItem('userName', name);
+      window.localStorage.setItem('userEmail', email);
+      // 4) hide the modal
       props.onHide();
-      // 3) go to the next page
+      // 5) go to the next page
       props.history.push('/account');
     })
     .catch(err => {

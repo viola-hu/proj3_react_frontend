@@ -70,8 +70,8 @@ function LogInForm(props){
       // once login success
       // 1) store jwt token in the localStorage
       window.localStorage.setItem('jwt', res.data.jwt);
-      // 2) send another axios request to get the cart from DB, to save in localStorage
-      getCart();
+      // 2) send another axios request to get the cart & user info from DB, to save in localStorage
+      getCartAndUserInfo();
       // 3) hide the modal
       props.onHide();
       // 4) go to the next page
@@ -83,20 +83,45 @@ function LogInForm(props){
       setErrorMessage('Invalid email or password')
     });
   };
-  // **************TODO:**************
+
   // once a user has logged in, either
-  // 1) along with the login token, send back user cart information: line_items
+  // 1) along with the login token, send back user cart's line_items
   // 2) or, send another axios request to get the line_items information
   // to store inside localStorage to show the shopping cart item number!
-  const getCart = ()=>{
+  const getCartAndUserInfo = ()=>{
     console.log('send another axios request!');
-    // axios.get('https://toyshoppingsite.herokuapp.com/cart')
-    // axios.get('http://localhost:3000/cart')
-    // continue!!!!
-    // **************TODO:**************
-    // axios.get(`${url.URL}/cart`)
 
+    // send another axios request to get user info + user cart's line_items number
+    const URL = `${url.URL}/user`;
 
+    const jwt = localStorage.getItem('jwt');
+
+    const configHeader = {
+      headers: {
+        Authorization: 'Bearer ' + jwt,
+      },
+    };
+
+    // console.log('%c get CART', 'font-size: 20pt');
+    axios.get(URL, configHeader)
+    .then(res => {
+      console.log('second axios response:', res);
+
+      // 1, store cart line_item number into localStorage
+      // in order to show on the top right - shopping bag
+      window.localStorage.setItem('totalProductsNumberInCart', res.data.products_number);
+
+      // 2, store user name + email into localStorage
+      window.localStorage.setItem('userName', res.data.current_user_name);
+
+      window.localStorage.setItem('userEmail', res.data.current_user_email);
+    })
+    .catch(err => {
+      // very rare for error to appear here
+      // since the user has just logged in, a cart should already been created when the user initially signed up
+      // user's info + cart info should be retrieved fine.
+      console.warn('SERVER ERROR:', err);
+    });
   };
 
   //
