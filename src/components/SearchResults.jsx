@@ -84,7 +84,7 @@ export default function SearchResults(props){
                   <Card.Img
                     variant="top"
                     src={process.env.PUBLIC_URL + `/images/${product.image}`}
-                    height={250}
+                    height={300}
                   />
                 </Link>
                 <Card.Body>
