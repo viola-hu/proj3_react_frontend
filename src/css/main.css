@@ -307,6 +307,7 @@ td{
 
 .about-title{
   color:pink;
+  text-shadow: hotpink 2px 2px;
   font-weight: 600;
 }
 
@@ -316,5 +317,28 @@ td{
 
 .shop-title{
   color:yellowgreen;
+  text-shadow: 1px 1px;
   font-weight: 600;
+}
+
+.card-background{
+  background-color: mistyrose;
+  padding: 1rem;
+  border: dashed lightgoldenrodyellow;
+}
+
+.found-result{
+  color:yellowgreen;
+  width:100%;
+  font-weight: 600;
+  padding: 0 1rem;
+}
+
+.found-toys-row{
+  text-align: left;
+  color:yellowgreen;
+}
+
+.found-no-toys-row{
+  text-align: center;
 }

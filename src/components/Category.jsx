@@ -60,20 +60,28 @@ export default function Category(props){
 
   // console.log('updated products:', products);
 
+  // different border color based on category id
+  const color = ['lightpink', 'gold', 'yellowgreen', 'paleturquoise'];
+
 
   return(
     <Container>
       <Row>
         {
           products.map( product => (
-            <Col xs={12} md={4} key={product.name}>
+            <Col xs={12} md={4} key={product.name} style={{textAlign:'center'}}>
               <Link to={`/product/${product.id}`}>
                 <Figure>
                   <Figure.Image
-                    width={200}
-                    height={200}
+                    width={300}
+                    height={300}
                     fluid={false}
-                    alt="200x200"
+                    alt="300x300"
+                    style={{
+                      padding: '1rem',
+                      border: `dashed ${color[id-1]}`,
+                      padding: '1rem'
+                    }}
                     src={process.env.PUBLIC_URL + `/images/${product.image}`}
                   />
                   <Figure.Caption>

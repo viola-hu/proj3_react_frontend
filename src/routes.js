@@ -15,6 +15,7 @@ import CartConfirm from "./components/CartConfirm";
 import CheckOut from "./components/CheckOut";
 import Payment from './components/Payment.js';
 import Order from './components/Order';
+import SearchResults from './components/SearchResults';
 
 
 const Routes = (
@@ -31,6 +32,7 @@ const Routes = (
       <Route exact path="/checkout" component={CheckOut}/>
       <Route exact path="/payment" component={Payment}/>
       <Route exact path="/order/:id" component={Order}/>
+      <Route exact path="/search/:q" component={SearchResults}/>
 
 
 

@@ -45,7 +45,7 @@ export class MapContainer extends Component{
     const mapStyles = {
       width: "22em",
       height: "20em",
-      border: "orangered dashed",
+      border: "orange dashed",
     };
 
     return(

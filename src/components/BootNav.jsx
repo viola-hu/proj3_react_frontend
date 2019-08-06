@@ -21,7 +21,11 @@ import ModalLogIn from "./ModalLogIn";
 
 export default function BootNav(props){
 
+  // state
   const [jwt, setJwt] = useState(localStorage.getItem('jwt'));
+  const [keyWord, setKeyWord] = useState('');
+
+
 
   const _handleLogOut = () => {
     // 1) clear localStorage : jwt, cart, userName
@@ -34,7 +38,31 @@ export default function BootNav(props){
 
     // 3) redirect to Home
     props.history.push('/');
-  }
+  }; //_handleLogOut()
+
+
+  const _handleChange = (event) => {
+    console.log('search keyword:', event.target.value);
+
+    // change state
+    setKeyWord(event.target.value)
+  };
+  // console.log('State search keyword:',keyWord);
+
+
+  const _handleSubmit = (event) => {
+    event.preventDefault();
+    // console.log('lalal');
+
+    // if keyWord is empty, do nothing
+    // if (!keyWord) console.log('do nothing');
+    if (!keyWord) return;
+
+    // if keyWord is not empty, redirect to SearchResults route
+    // from there, do axios request, no matter what result is would be!
+    props.history.push(`/search/${keyWord}`)
+  };
+
 
   let buttonLeft;
   if(localStorage.getItem('jwt')){
@@ -84,7 +112,7 @@ export default function BootNav(props){
         <Nav className="mr-auto">
           <ButtonToolbar>
             <Button className="btn-space" href="#/" variant="danger">Home</Button>
-            <Button id="test"className="btn-space" href="#about" variant="primary">About</Button>
+            <Button className="btn-space" href="#about" variant="primary">About</Button>
           </ButtonToolbar>
 
           <Dropdown>
@@ -100,11 +128,12 @@ export default function BootNav(props){
             </Dropdown.Menu>
           </Dropdown>
         </Nav>
-
-        <Form inline>
-          <FormControl type="text" placeholder="e.g. hellokitty" className="mr-sm-2" />
-          <Button variant="secondary" className="btn-space" size="sm">Search</Button>
-        </Form>
+        <Nav>
+          <Form inline onSubmit={_handleSubmit}>
+            <FormControl type="text" placeholder="e.g. hellokitty" className="mr-sm-2" onChange={_handleChange}/>
+            <Button type="submit" variant="secondary" className="btn-space" size="sm">Search</Button>
+          </Form>
+        </Nav>
 
         <Nav className="mr-auto">
           {buttonLeft}
@@ -114,9 +143,11 @@ export default function BootNav(props){
     </Navbar>
   );
 
-} // class BootNav
-  //
-  // <Image className="cart-icon" src="../public/images/cart-icon.png" fluid />
+}
+
+// class BootNav
+//
+// <Image className="cart-icon" src="../public/images/cart-icon.png" fluid />
 
 // <img className="cart-icon" src={process.env.PUBLIC_URL + '/images/c101.jpg'} />
 
