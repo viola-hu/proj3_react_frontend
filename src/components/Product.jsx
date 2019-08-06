@@ -164,7 +164,11 @@ export default function Product(props){
     axios.post(URL, data, configHeader)
     .then(res => {
       console.log('added to cart',res);
-      // pop up a msg to user, showing adding to cart successfully, with a link to cart page
+
+      // 1) update localStorage's totalProductsNumberInCart
+      window.localStorage.setItem('totalProductsNumberInCart', res.data.total_products_number_in_cart);
+      
+      // 2) pop up a msg to user, showing adding to cart successfully, with a link to cart page
       setSuccessAddToCartMessage(`Successfully added to cart!`);
     })
     .catch(err => {
