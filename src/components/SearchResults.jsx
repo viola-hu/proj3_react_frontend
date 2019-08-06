@@ -103,14 +103,3 @@ export default function SearchResults(props){
     </Container>
   );
 }
-
-// <Card bg="primary" style={{ width: '18rem' }}>
-//   <Card.Img variant="top" src="http://www.fillmurray.com/600/400" />
-//   <Card.Body>
-//     <Card.Title style={{color: 'white'}}>Card Title</Card.Title>
-//     <Card.Text style={{color: 'white'}}>
-//       Some quick example text to build on the card title and make up the bulk of
-//       the card's content.
-//     </Card.Text>
-//   </Card.Body>
-// </Card>
