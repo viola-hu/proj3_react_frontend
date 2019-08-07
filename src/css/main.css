@@ -404,6 +404,7 @@ td{
   margin-bottom: 0;
 }
 
-.order-card-body a{
+.order-card-header:hover, .order-card-row:hover{
+  background-color: rgba(255, 228, 225, .7);
 
 }
