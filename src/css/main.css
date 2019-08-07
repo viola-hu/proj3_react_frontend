@@ -346,13 +346,64 @@ td{
 
 .update-account{
   border: none;
-  color: turquoise;
   font-weight: 600;
+  color: orange;
 }
 
 .delete-account{
   border: none;
-  color: grey;
+  color: turquoise;
   font-weight: 600;
+}
+
+.order-list-image{
+  width: 8rem;
+  height: 8rem;
+  border-style: outset;
+  /* margin: 0 3rem 0 0; */
+  border-color: ivory;
+}
+
+.order-card-body{
+  background-color: mistyrose;
+  padding: 0 1.25rem;
+}
+
+.order-card-header{
+  background-color: mistyrose;
+  border-bottom: dashed lightblue .3rem;
+  cursor: pointer;
+}
+
+.order-card-row{
+  padding: 1rem 0;
+  background-color: mistyrose;
+  border-bottom: dashed lightblue .3rem;
+}
+
+.account-container{
+  margin:1rem auto;
+  color: grey;
+}
+
+.order-list-product{
+  font-weight: 600;
+}
+
+.account-title{
+  font-weight: 600;
+  color: yellowgreen;
+}
+
+.account-table-header{
+  color: hotpink;
+}
+
+.order-card-row p {
+  margin-top: .7rem;
+  margin-bottom: 0;
+}
+
+.order-card-body a{
 
 }
