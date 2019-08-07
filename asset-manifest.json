@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/proj3_react_frontend/static/css/main.495523ae.chunk.css",
+    "main.css": "/proj3_react_frontend/static/css/main.5287a3a4.chunk.css",
     "main.js": "/proj3_react_frontend/static/js/main.617b7804.chunk.js",
     "main.js.map": "/proj3_react_frontend/static/js/main.617b7804.chunk.js.map",
     "runtime~main.js": "/proj3_react_frontend/static/js/runtime~main.9aa6579d.js",
@@ -8,9 +8,9 @@
     "static/js/2.f0a84e58.chunk.js": "/proj3_react_frontend/static/js/2.f0a84e58.chunk.js",
     "static/js/2.f0a84e58.chunk.js.map": "/proj3_react_frontend/static/js/2.f0a84e58.chunk.js.map",
     "index.html": "/proj3_react_frontend/index.html",
-    "precache-manifest.98fbb9b4559f303f7d1ef1c1a5c8b34b.js": "/proj3_react_frontend/precache-manifest.98fbb9b4559f303f7d1ef1c1a5c8b34b.js",
+    "precache-manifest.791657d2c798a0ea6370dd0bfc5b65b3.js": "/proj3_react_frontend/precache-manifest.791657d2c798a0ea6370dd0bfc5b65b3.js",
     "service-worker.js": "/proj3_react_frontend/service-worker.js",
-    "static/css/main.495523ae.chunk.css.map": "/proj3_react_frontend/static/css/main.495523ae.chunk.css.map",
+    "static/css/main.5287a3a4.chunk.css.map": "/proj3_react_frontend/static/css/main.5287a3a4.chunk.css.map",
     "static/media/main.css": "/proj3_react_frontend/static/media/cart-icon.23dfd1fb.png"
   }
 }
