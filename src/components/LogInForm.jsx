@@ -104,7 +104,7 @@ function LogInForm(props){
     .then(res => {
       console.log('second axios response:', res);
 
-      // 1, store cart line_item number into localStorage
+      // 1, store cart totalProductsNumberInCart into localStorage
       // in order to show on the top right - shopping bag
       window.localStorage.setItem('totalProductsNumberInCart', res.data.products_number);
 

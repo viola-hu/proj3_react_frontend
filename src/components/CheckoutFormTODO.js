@@ -76,17 +76,19 @@ class CheckoutForm extends Component {
       console.log('stripe response', res);
       console.log('stripe response', res.statusText);
 
-      // 1, payment success
+      // 1, payment successful
       if (res.statusText == "OK"){
 
-        // 1> frontend, clear localStorage cart, to be reused!
-        // so that when redirect to the new page, top right corner cart item number changes back to "0"
-        localStorage.setItem('cart', 0);
+        // 1> frontend, reset localStorage totalProductsNumberInCart, to be reused!
+        // so that when redirect to the new route after payment,
+        // BootNav rerenders and top right corner shopping bag number changes back to "0"
+        localStorage.setItem('totalProductsNumberInCart', 0);
 
         // 2> backend, send request to server to change DB
         // 1) move line_items from cart into order
         // 2) also update product stock!
-        // 3) at last redirect to order page!
+
+        // 3> at last redirect to order page!
         // ********** TODO: **************
         // doing the below in a separate axios request as previously have already built the below process based on faking Successful payment
         // will need to minimise the axios request and do logic process at the backend in one step once payment is successful.
@@ -102,8 +104,7 @@ class CheckoutForm extends Component {
     });
 
 
-    const moveLineItemsFromCartToOrderAndUpdateStock = ()=>{
-      // const URL = `https://toyshoppingsite.herokuapp.com/order`;
+    const moveLineItemsFromCartToOrderAndUpdateStock = () => {
       const URL = `${url.URL}/order`;
 
       const jwt = localStorage.getItem('jwt');
