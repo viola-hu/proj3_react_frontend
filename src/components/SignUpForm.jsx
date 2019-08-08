@@ -96,7 +96,7 @@ function SignUpForm(props){
       // 4) hide the modal
       props.onHide();
       // 5) go to the next page
-      props.history.push('/account');
+      props.history.push('/category/1');
     })
     .catch(err => {
       // if any error, update state and print out in UI
