@@ -111,6 +111,9 @@ function LogInForm(props){
       // in order to show on the top right - shopping bag
       window.localStorage.setItem('totalProductsNumberInCart', res.data.products_number);
 
+      // 1.5, call the passed-down props callback to updateProductsNumberInCart in BootNav
+      props.updateProductsNumberInCart(res.data.products_number);
+
       // 2, store user name + email into localStorage
       window.localStorage.setItem('userName', res.data.current_user_name);
 

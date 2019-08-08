@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from "react-router-dom";
 
 import Navbar from "react-bootstrap/Navbar";
@@ -24,7 +24,41 @@ export default function BootNav(props){
   // state
   const [jwt, setJwt] = useState(localStorage.getItem('jwt'));
   const [keyWord, setKeyWord] = useState('');
+  const [totalProductsNumberInCart, setTotalProductsNumberInCart] = useState(0);
 
+  // useState(window.localStorage.getItem('totalProductsNumberInCart'));
+
+  const currentProductsNumberInCart = window.localStorage.getItem('totalProductsNumberInCart');
+
+
+  console.log('currentProductsNumberInCart from localStorage:', currentProductsNumberInCart);
+
+  console.log('BootNav state - totalProductsNumberInCart', totalProductsNumberInCart);
+
+
+  // when a user hasn't logged in , won't see the shopping bag icon!
+  // thus, totalProductsNumberInCart won't show up as null!
+  useEffect(() => {
+    // whenever the location.pathname changes - route changes
+    // useEffect's callback will run, and callback will always envolve update state
+    // if state changes, the whole component will re-render
+    // => here, check if the current localStorage has changed or not?
+    // if yes, update state and it will trigger component to re-render
+    if (currentProductsNumberInCart !== totalProductsNumberInCart){
+      setTotalProductsNumberInCart(currentProductsNumberInCart);
+    }
+  },[props.location.pathname]);
+
+
+  // due to asynchronous of JS, after login
+  // the second request to get totalProductsNumberInCart is slower
+  // than the BootNav itself renders, thus, the top right shopping bag shows nothing!
+  // pass down a callback function for login component to pass over received data
+  // in order to update state here once the login second request receives response
+  const _updateProductsNumberInCart = (productsNumberInCartAfterLogin) => {
+    console.log('received productsNumberInCartAfterLogin', productsNumberInCartAfterLogin);
+    setTotalProductsNumberInCart(productsNumberInCartAfterLogin);
+  }
 
 
   const _handleLogOut = () => {
@@ -37,6 +71,7 @@ export default function BootNav(props){
 
     // 2) update state, so BootNav can re-render
     setJwt('');
+    setTotalProductsNumberInCart(0);
 
     // 3) redirect to Home
     props.history.push('/');
@@ -91,15 +126,15 @@ export default function BootNav(props){
         <Button className="btn-space" variant="info" onClick={_handleLogOut}>
           LogOut
         </Button>
-        <Link to={'/cart'}>
-          <img className="cart-icon" src={process.env.PUBLIC_URL +`/images/cart-icon.png`}></img>
+        <Link to={'/cart'} className="cart-icon-bg">
+          <p className="cart-icon-number">({totalProductsNumberInCart})</p>
         </Link>
       </div>
     );
   } else {
     // not yet logged in
     buttonRight = (
-      <ModalLogIn/>
+      <ModalLogIn updateProductsNumberInCart={_updateProductsNumberInCart}/>
     );
   }
 
@@ -155,3 +190,16 @@ export default function BootNav(props){
 
 // <div className="cart-icon">
 //   </div>
+
+
+
+// buttonRight = (
+//   <div>
+//     <Button className="btn-space" variant="info" onClick={_handleLogOut}>
+//       LogOut
+//     </Button>
+//     <Link to={'/cart'}>
+//       <img className="cart-icon" src={process.env.PUBLIC_URL +`/images/cart-icon.png`}></img>
+//     </Link>
+//   </div>
+// );
