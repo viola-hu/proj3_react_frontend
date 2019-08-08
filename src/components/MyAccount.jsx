@@ -97,56 +97,67 @@ export default function MyAccount(props){
 
           <Col sm={12} md={8}>
             <h3 className="account-title">My Orders</h3>
-            <Accordion defaultActiveKey="0">
-              <Card>
-                {
-                  orders.map((order, index)=> (
-                    <div key={index}>
-                      <Accordion.Toggle
-                        as={Card.Header}
-                        eventKey={`${index + 1}`}
-                        className="order-card-header"
-                      >
-                      <Row>
-                        <Col>
-                          <small>#</small>{' '}Order{' '}{order.id} {' '}
-                          <small><i>{order.order_created_at_date_formatted}</i></small>
-                        </Col>
-                        <Col style={{textAlign: 'right'}}>
-                          <span>Total: ${order.order_total_amount}</span>
-                        </Col>
-                      </Row>
-                      </Accordion.Toggle>
-                      <Accordion.Collapse eventKey={`${index + 1}`} key={order.id}>
-                          <Card.Body className="order-card-body">
-                            {
-                              order.line_items.map(li =>(
-                                <Row className="order-card-row" key={li.id}>
-                                  <Col sm={12} md={4}>
-                                    <Link to={`/product/${li.product_id}`}>
-                                    <img
-                                      name={li.product.name}
-                                      src={process.env.PUBLIC_URL + `/images/${li.product.image}`}
-                                      className="order-list-image"
-                                    />
-                                    </Link>
-                                  </Col>
-                                  <Col sm={12} md={8}>
-                                    <h5 className="order-list-product">{li.product.name}</h5>
-                                    <p>Price: ${li.product.price}</p>
-                                    <p>Purchased Number: {li.quantity}</p>
-                                    <p>Subtotal: ${li.quantity * li.product.price}</p>
-                                  </Col>
-                                </Row>
-                              ))
-                            }
-                          </Card.Body>
-                      </Accordion.Collapse>
-                    </div>
-                  ))
-                }
-              </Card>
-            </Accordion>
+            {
+              orders.length === 0
+              ?
+              (
+              <div>
+                <h5 className="no-purchase">No purchase yet. Go get them! </h5>
+                <Image src={process.env.PUBLIC_URL + `/images/nopurchaseyet02.gif`} fluid />
+              </div>
+              )
+              :
+              <Accordion defaultActiveKey="0">
+                <Card>
+                  {
+                    orders.map((order, index)=> (
+                      <div key={index}>
+                        <Accordion.Toggle
+                          as={Card.Header}
+                          eventKey={`${index + 1}`}
+                          className="order-card-header"
+                        >
+                        <Row>
+                          <Col>
+                            <small>#</small>{' '}Order{' '}{order.id} {' '}
+                            <small><i>{order.order_created_at_date_formatted}</i></small>
+                          </Col>
+                          <Col style={{textAlign: 'right'}}>
+                            <span>Total: ${order.order_total_amount}</span>
+                          </Col>
+                        </Row>
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey={`${index + 1}`} key={order.id}>
+                            <Card.Body className="order-card-body">
+                              {
+                                order.line_items.map(li =>(
+                                  <Row className="order-card-row" key={li.id}>
+                                    <Col sm={12} md={4}>
+                                      <Link to={`/product/${li.product_id}`}>
+                                      <img
+                                        name={li.product.name}
+                                        src={process.env.PUBLIC_URL + `/images/${li.product.image}`}
+                                        className="order-list-image"
+                                      />
+                                      </Link>
+                                    </Col>
+                                    <Col sm={12} md={8}>
+                                      <h5 className="order-list-product">{li.product.name}</h5>
+                                      <p>Price: ${li.product.price}</p>
+                                      <p>Purchased Number: {li.quantity}</p>
+                                      <p>Subtotal: ${li.quantity * li.product.price}</p>
+                                    </Col>
+                                  </Row>
+                                ))
+                              }
+                            </Card.Body>
+                        </Accordion.Collapse>
+                      </div>
+                    ))
+                  }
+                </Card>
+              </Accordion>
+            }
           </Col>
         </Row>
       </Container>

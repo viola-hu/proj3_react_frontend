@@ -19,9 +19,8 @@ import SearchResults from './components/SearchResults';
 
 
 const Routes = (
-    <Router>
+  <Router>
     <div className="entireBody">
-
       <Route path="/" component={BootNav}/>
       <Route exact path="/" component={Home}/>
       <Route exact path="/about" component={About}/>

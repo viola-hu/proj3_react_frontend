@@ -61,7 +61,7 @@ export default function Category(props){
   // console.log('updated products:', products);
 
   // different border color based on category id
-  const color = ['lightpink', 'gold', 'yellowgreen', 'paleturquoise'];
+  const color = ['lightpink', 'gold', 'yellowgreen', 'turquoise'];
 
 
   return(
