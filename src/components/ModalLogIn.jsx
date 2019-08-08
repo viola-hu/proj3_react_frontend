@@ -25,7 +25,6 @@ export default function ModalLogIn(props){
       <LogInVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        updateProductsNumberInCart={props.updateProductsNumberInCart}
       />
     </ButtonToolbar>
   );
@@ -48,7 +47,6 @@ function LogInVerticallyCenteredModal(props) {
       <Modal.Body>
         <LogInForm
           onHide={props.onHide}
-          updateProductsNumberInCart={props.updateProductsNumberInCart}
         />
       </Modal.Body>
     </Modal>

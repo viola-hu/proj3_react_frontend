@@ -42,8 +42,6 @@ export default function Product(props){
   },[]);
 
   const getProductById = (id)=>{
-    // const URL = `https://toyshoppingsite.herokuapp.com/products/${id}`;
-    // const URL = `http://localhost:3000/products/${id}`;
     const URL = `${url.URL}/products/${id}`;
 
     axios.get(URL)
@@ -167,9 +165,12 @@ export default function Product(props){
 
       // 1) update localStorage's totalProductsNumberInCart
       window.localStorage.setItem('totalProductsNumberInCart', res.data.total_products_number_in_cart);
-      
+
       // 2) pop up a msg to user, showing adding to cart successfully, with a link to cart page
       setSuccessAddToCartMessage(`Successfully added to cart!`);
+
+      // 3) push to itself to trigger BootNav rerender and update shopping bag number
+      props.history.push(`/product/${id}`);
     })
     .catch(err => {
       console.warn('ERROR of adding to cart', err);

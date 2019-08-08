@@ -71,11 +71,8 @@ function LogInForm(props){
       // 1) store jwt token in the localStorage
       window.localStorage.setItem('jwt', res.data.jwt);
       // 2) send another axios request to get the cart & user info from DB, to save in localStorage
-      getCartAndUserInfo();
-      // 3) hide the modal
-      props.onHide();
-      // 4) go to the next page
-      props.history.push('/category/1');
+      getCartAndUserInfoAndRedirect();
+
     })
     .catch(err => {
       // if any error, update state and print out in UI
@@ -88,7 +85,7 @@ function LogInForm(props){
   // 1) along with the login token, send back user cart's line_items
   // 2) or, send another axios request to get the line_items information
   // to store inside localStorage to show the shopping cart item number!
-  const getCartAndUserInfo = ()=>{
+  const getCartAndUserInfoAndRedirect = ()=>{
     console.log('send another axios request!');
 
     // send another axios request to get user info + user cart's line_items number
@@ -111,13 +108,16 @@ function LogInForm(props){
       // in order to show on the top right - shopping bag
       window.localStorage.setItem('totalProductsNumberInCart', res.data.products_number);
 
-      // 1.5, call the passed-down props callback to updateProductsNumberInCart in BootNav
-      props.updateProductsNumberInCart(res.data.products_number);
-
       // 2, store user name + email into localStorage
       window.localStorage.setItem('userName', res.data.current_user_name);
-
       window.localStorage.setItem('userEmail', res.data.current_user_email);
+
+      // 3, hide the modal
+      props.onHide();
+
+      // 4, go to the next route, trigger BootNav to rerender
+      props.history.push('/category/1');
+
     })
     .catch(err => {
       // very rare for error to appear here

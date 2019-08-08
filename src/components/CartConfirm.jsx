@@ -15,6 +15,7 @@ export default function CartConfirm(props){
 
   const [lineItems, setLineItems] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
+  // const [totalProductsNumberInCart, setTotalProductsNumberInCart] = useState(window.localStorage.getItem('totalProductsNumberInCart'))
   // const [quantity, setQuantity] = useState(0);
   // const [product, setProduct] = useState({});
 
@@ -127,10 +128,22 @@ export default function CartConfirm(props){
     axios.put(URL, data, configHeader)
     .then(res => {
       console.log('response from server:', res.data); // an array of all line_item objects of the cart / current_user
-      // if success, 1) update the state: lineItems
+
+      // 1) update localStorage totalProductsNumberInCart
+      updateTotalProductsNumberInCart(res.data);
+
+      // 2) update the state: lineItems
       // DB send back the whole array of line_item objects, including its product association
       // the whole page will re-render with updated state
       setLineItems(res.data);
+
+      // 3) push to itself which will trigger BootNav to rerender,
+      // in order to show updated number in top right corner shopping bag
+      // Though get warning in console:
+      // Warning: Hash history cannot PUSH the same path; a new entry will not be added to the history stack
+      // it won't go to a new page, but did trigger BootNav to re-render
+      props.history.push('/cart');
+
     })
     .catch(err => {
       console.warn('ERROR of updating quantity', err);
@@ -165,11 +178,46 @@ export default function CartConfirm(props){
     .then(res => {
       console.log('DELETE response:', res.data);
       // after deleting, send back a new line_items array to update state!
+
+      // 1) update localStorage totalProductsNumberInCart
+      updateTotalProductsNumberInCart(res.data);
+
+      // 2) update the state: lineItems
       setLineItems(res.data);
+
+      // 3) push to itself which will trigger BootNav to rerender
+      props.history.push('/cart');
+
     })
     .catch(err => {
       console.warn('ERRORS!!!:', err);
     });
+  };
+
+
+
+  const updateTotalProductsNumberInCart = ( updatedLineItems ) => {
+
+    // 1) if there's no line item left in the cart, empty array
+    // update localStorage, totalProductsNumberInCart = 0
+    if(updatedLineItems.length === 0){
+      console.log('totalProductsNumberInCart', 0);
+      window.localStorage.setItem('totalProductsNumberInCart', 0);
+    } else {
+      let updatedTotalProductsNumberInCart = 0;
+
+      updatedLineItems.forEach(li => {
+        updatedTotalProductsNumberInCart += li.quantity;
+      });
+
+      console.log('updatedTotalProductsNumberInCart:', updatedTotalProductsNumberInCart);
+
+      // update localStorage with the new totalProductsNumberInCart
+      window.localStorage.setItem(
+        'totalProductsNumberInCart',
+        updatedTotalProductsNumberInCart
+      );
+    };
   };
 
 

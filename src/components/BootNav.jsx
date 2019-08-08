@@ -47,18 +47,7 @@ export default function BootNav(props){
     if (currentProductsNumberInCart !== totalProductsNumberInCart){
       setTotalProductsNumberInCart(currentProductsNumberInCart);
     }
-  },[props.location.pathname]);
-
-
-  // due to asynchronous of JS, after login
-  // the second request to get totalProductsNumberInCart is slower
-  // than the BootNav itself renders, thus, the top right shopping bag shows nothing!
-  // pass down a callback function for login component to pass over received data
-  // in order to update state here once the login second request receives response
-  const _updateProductsNumberInCart = (productsNumberInCartAfterLogin) => {
-    console.log('received productsNumberInCartAfterLogin', productsNumberInCartAfterLogin);
-    setTotalProductsNumberInCart(productsNumberInCartAfterLogin);
-  }
+  });
 
 
   const _handleLogOut = () => {
@@ -127,14 +116,14 @@ export default function BootNav(props){
           LogOut
         </Button>
         <Link to={'/cart'} className="cart-icon-bg">
-          <p className="cart-icon-number">({totalProductsNumberInCart})</p>
+          <p className="cart-icon-number">{totalProductsNumberInCart}</p>
         </Link>
       </div>
     );
   } else {
     // not yet logged in
     buttonRight = (
-      <ModalLogIn updateProductsNumberInCart={_updateProductsNumberInCart}/>
+      <ModalLogIn />
     );
   }
 
