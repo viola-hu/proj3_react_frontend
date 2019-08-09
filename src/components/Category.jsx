@@ -69,7 +69,7 @@ export default function Category(props){
       <Row>
         {
           products.map( product => (
-            <Col xs={12} md={4} key={product.name} style={{textAlign:'center'}}>
+            <Col sm={4} key={product.name} style={{textAlign:'center'}}>
               <Link to={`/product/${product.id}`}>
                 <Figure>
                   <Figure.Image

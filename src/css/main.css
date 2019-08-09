@@ -16,6 +16,14 @@
 
 }
 
+.a{
+  text-decoration: none;
+}
+
+a:hover, a:visited, a:link, a:active{
+  text-decoration: none;
+}
+
 .happy-kids{
   max-height: 7vh;
 }
@@ -269,9 +277,7 @@ td{
   margin:0
 }
 
-.home-image{
-  width:100vw;
-}
+
 
 .success-purchase-link, .success-purchase{
   color:var(--cyan);
@@ -429,4 +435,117 @@ td{
 .no-purchase{
   color:hotpink;
   font-weight: 600;
+}
+
+
+.home-title{
+  text-align: center;
+  font-weight: 600;
+}
+
+.home-category-container{
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+
+.home-category-01{
+  background:pink;
+}
+.home-category-02{
+  background:gold;
+}
+.home-category-03{
+  background:yellowgreen;
+}
+.home-category-04{
+  background:turquoise;
+}
+
+
+
+.home-category{
+  text-align: center;
+  position: relative;
+  top: 42%;
+  font-size: 1.5rem;
+}
+
+.home-image{
+  width:100%;
+  /* height:100%; */
+  border: dotted lightgoldenrodyellow;
+}
+
+.home-image:hover{
+  /* opacity:.8; */
+  border:none;
+}
+
+.home-newarrivals-image{
+
+}
+
+.home-category-list{
+  padding: 1rem;
+  /* margin: 0; */
+  color: white;
+  font-weight: 600;
+  border-radius: 2rem;
+  text-shadow: 1px 1px darkgrey;
+  opacity: .85;
+}
+
+.home-category-list:hover{
+  opacity:1;
+  /* border:dashed; */
+}
+
+/* .home-category-list-item{
+  max-width: 100%;
+  text-align: center;
+  color: white;
+} */
+
+.carousel-row-top{
+  padding: 2rem 0 1rem;
+}
+
+.carousel-row-bottom{
+  padding: 1rem 0 2rem;
+}
+
+.carousel-col-left{
+  padding: 0 1rem 0 2rem;
+}
+
+.carousel-col-right{
+  padding: 0 2rem 0 1rem;
+}
+
+.carousel-container{
+  background-color: lightgrey;
+}
+
+.home-category-title{
+  color: grey;
+  font-weight: 600;
+  text-shadow: 1px 1px darkgrey;
+  margin:0;
+}
+
+.btn-our-story{
+  border-radius: 2rem;
+  border: #6c757d .1rem solid;
+  margin: 1rem;
+  color: #6c757d;
+}
+
+.home-right-col{
+  padding:1rem;
+  background-color:lightgrey;
+  text-align:center;
+  background: url(../images/pinkbubles.gif);
+  background-size: contain;
 }

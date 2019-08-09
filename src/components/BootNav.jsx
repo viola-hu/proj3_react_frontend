@@ -128,7 +128,7 @@ export default function BootNav(props){
   }
 
   return(
-    <Navbar sticky="top" expand="md" className="entireBody justify-content-between">
+    <Navbar sticky="top" expand="md" className="entireBody">
       <Navbar.Brand href="#/">
         <div>V's Toy</div>
         <img className="happy-kids" src={process.env.PUBLIC_URL + '/images/happy-kids.png'}/>
