@@ -39,7 +39,7 @@ export default function Product(props){
       setButtonStatus(true);
       setButtonText('Login to use cart')
     }
-  },[]);
+  },[id]);
 
   const getProductById = (id)=>{
     const URL = `${url.URL}/products/${id}`;
@@ -114,6 +114,7 @@ export default function Product(props){
         setErrorMessage('');
         setQuantity(wantedQuantity);
         setButtonStatus(false);
+        setButtonText('Add to Cart');
       }
       console.log('wantedQuantity:', wantedQuantity);
     }

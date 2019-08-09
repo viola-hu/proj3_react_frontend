@@ -88,15 +88,16 @@ function SignUpForm(props){
       window.localStorage.setItem('jwt', res.data.jwt);
       // 2) store cart line_item number into localStorage
       // in order to show on the top right - shopping bag
-      // as the user just sign up, the cart's line items number should be "0"
+      // as the user just signed up, the cart's line items number should be "0"
       window.localStorage.setItem('totalProductsNumberInCart', 0);
       // 3) store user name + email into localStorage
       window.localStorage.setItem('userName', name);
       window.localStorage.setItem('userEmail', email);
       // 4) hide the modal
       props.onHide();
-      // 5) go to the next page
-      props.history.push('/category/1');
+      // 5) couldn't find a way to rerender the current route,
+      // thus, use .go() to refresh current page!
+      props.history.go(props.location.pathname);
     })
     .catch(err => {
       // if any error, update state and print out in UI
