@@ -23,7 +23,9 @@ export default function Home(props){
                   <Col className="carousel-col-left">
                     <Link to={'/category/1'}>
                       <div className="home-category-container home-category-01">
-                        <div className="home-category">Age 0 - 2</div>
+                        <div className="home-category">
+                          Age <br/>0 - 2
+                        </div>
                       </div>
                     </Link>
                   </Col>
@@ -59,7 +61,9 @@ export default function Home(props){
                   <Col className="carousel-col-right">
                     <Link to={'/category/2'}>
                       <div className="home-category-container home-category-02">
-                        <div className="home-category">Age 2 - 5</div>
+                        <div className="home-category">
+                          Age <br/>2 - 5
+                        </div>
                       </div>
                     </Link>
                   </Col>
@@ -102,7 +106,9 @@ export default function Home(props){
                   <Col className="carousel-col-right">
                     <Link to={'/category/3'}>
                       <div className="home-category-container home-category-03">
-                        <div className="home-category">Age 5 - 8</div>
+                        <div className="home-category">
+                          Age <br/>5 - 8
+                        </div>
                       </div>
                     </Link>
                   </Col>
@@ -128,7 +134,9 @@ export default function Home(props){
                   <Col className="carousel-col-left">
                     <Link to={'/category/4'}>
                       <div className="home-category-container home-category-04">
-                        <div className="home-category">Age over 8</div>
+                        <div className="home-category">
+                          Age <br/>over 8
+                        </div>
                       </div>
                     </Link>
                   </Col>
@@ -151,24 +159,24 @@ export default function Home(props){
             <Button className="btn-our-story" variant="outline-secondary">Our Story</Button>
           </Link>
           <Link to={'/category/1'}>
-            <h3 className="home-category-list home-category-01">
+            <h5 className="home-category-list home-category-01">
               Age 0-2
-            </h3>
+            </h5>
           </Link>
           <Link to={'/category/2'}>
-            <h3 className="home-category-list home-category-02">
+            <h5 className="home-category-list home-category-02">
               Age 2-5
-            </h3>
+            </h5>
           </Link>
           <Link to={'category/3'}>
-            <h3 className="home-category-list home-category-03">
+            <h5 className="home-category-list home-category-03">
               Age 5-8
-            </h3>
+            </h5>
           </Link>
           <Link to={'category/4'}>
-            <h3 className="home-category-list home-category-04">
+            <h5 className="home-category-list home-category-04">
               Age over 8
-            </h3>
+            </h5>
           </Link>
 
         </Col>
