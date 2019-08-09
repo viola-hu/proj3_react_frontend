@@ -97,7 +97,7 @@ function SignUpForm(props){
       props.onHide();
       // 5) couldn't find a way to rerender the current route,
       // thus, use .go() to refresh current page!
-      props.history.go(props.location.pathname);
+      props.history.go(0);
     })
     .catch(err => {
       // if any error, update state and print out in UI

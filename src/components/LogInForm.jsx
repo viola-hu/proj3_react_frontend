@@ -115,11 +115,14 @@ function LogInForm(props){
       // 3, hide the modal
       props.onHide();
 
-      // 4, use props.history.go to force to go to the specified route, even it's the current route path, as it's forcing to REFRESH the page!!!
+      // 4, go(n) - (function) Moves the pointer in the history stack by n entries
+      // use props.history.go to force to go to the specified route, even it's the current route path, as it's forcing to REFRESH the page!!!
       // so that it will trigger the current route page to re-render
-      // e.g. user in the product page and after login, stay in the same product page, but with everything enabled after login + re-render
+      // e.g. user in the product page and after login, stay in the same product page, but with everything enabled after login / page re-render
       // meanwhile, .go() also triggers BootNav to rerender to update shopping bag number on top right corner
-      props.history.go(props.location.pathname);
+      // 0 means the current entry - the newest entry in the history stack
+      // stack, last in first out, thus, the current entry (the lastest entry) is the first to go out, stays at the beginning of the stack!
+      props.history.go(0);
     })
     .catch(err => {
       // very rare for error to appear here
