@@ -2,17 +2,20 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
 import url from '../lib/url';
-import ReactImageMagnify from 'react-image-magnify';
+import ProdcuctImage from './ProdcuctImage';
 
-// import ListGroup from "react-bootstrap/ListGroup";
-// import ListGroupItem from "react-bootstrap/ListGroupItem";
-// import Form from "react-bootstrap/Form";
-// import FormText from "react-bootstrap/FormText";
-// import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Figure from "react-bootstrap/Figure";
+import ListGroup from "react-bootstrap/ListGroup";
+import ListGroupItem from "react-bootstrap/ListGroupItem";
+import Form from "react-bootstrap/Form";
+import FormText from "react-bootstrap/FormText";
+import Button from "react-bootstrap/Button";
 
 
-export default function Product(props){
+export default function ProductOld(props){
 
   // product id passed by props
   const {id} = props.match.params;
@@ -192,95 +195,44 @@ export default function Product(props){
 
 
   return(
-    <div className="fluid">
-      <div className="fluid__image-container">
-        <div className="image_wrapper">
-          <ReactImageMagnify {...{
-              smallImage: {
-                  alt: `${props.image}`,
-                  isFluidWidth: true,
-                  src: process.env.PUBLIC_URL +`/images/${product.image}`,
-              },
-              largeImage: {
-                  src: process.env.PUBLIC_URL +`/images/${product.image}`,
-                  width: 600,
-                  height: 600
-              },
-              isHintEnabled: true,
-              shouldHideHintAfterFirstActivation: false
-          }} />
-        </div>
-      </div>
-      <div className="fluid__instructions">
-        <div>
-          {showSuccessMessage}
-        </div>
-        <h3 className="product-name">
-          <strong>
-            {product.name}
-          </strong>
-        </h3>
-        <p>
-          <span className="product-label">
-            Category
-          </span>
-          :{' '}
-          {category.name}
-        </p>
-        <p>
-          <span className="product-label">
-            Price
-          </span>
-          : {`$${product.price}`}
-        </p>
-        <small className="errorMessage">
-          {errorMessage}
-        </small>
-        <div>
-          <span className="product-label">
-            Select Quantity
-          </span>:{' '}
-          <input
-            type="number"
-            min="1"
-            max={product.stock}
-            defaultValue="1" onChange={_handleChangeQuantity}
-          />
-          <br/>
-          <small>
-          (In stock: {product.stock})
-          </small>
-        </div>
-        <div>
-          <button
-            id="add-to-cart"
-            disabled={buttonStatus} onClick={_handleAddToCart}
-          >
-            {buttonText}
-          </button>
-        </div>
-        <p>
-          <span className="product-label">
-            Description
-          </span>
-          : <br/>
-          {product.description}
-        </p>
-      </div>
-    </div>
+    <ProdcuctImage image={product.image}/>
   );
 }
 
-
-// <ListGroup variant="flush">
-// <ListGroup.Item>{showSuccessMessage}</ListGroup.Item>
-// <ListGroup.Item><strong>{product.name}</strong></ListGroup.Item>
-// <ListGroup.Item>Category: {category.name}
-// </ListGroup.Item>
-// <ListGroup.Item>Price: {`$${product.price}`}</ListGroup.Item>
-// <ListGroup.Item>
-// </ListGroup.Item>
-// <ListGroup.Item>
-// </ListGroup.Item>
-// <ListGroup.Item>Description: <br/> {product.description}</ListGroup.Item>
-// </ListGroup>
+<Container>
+  <Row>
+    <Col sm md={7} className="product-image-col">
+      <Figure className="product-figure">
+        <Figure.Image
+          fluid={true}
+          alt="500x500"
+          src={process.env.PUBLIC_URL +`/images/${product.image}`}
+          className="product-figure-image"
+        />
+      </Figure>
+    </Col>
+    <Col sm md={5}>
+      <ListGroup variant="flush">
+        <ListGroup.Item>{showSuccessMessage}</ListGroup.Item>
+        <ListGroup.Item><strong>{product.name}</strong></ListGroup.Item>
+        <ListGroup.Item>Category: {category.name}
+        </ListGroup.Item>
+        <ListGroup.Item>Price: {`$${product.price}`}</ListGroup.Item>
+        <ListGroup.Item>
+          <Form.Text className="errorMessage">
+            {errorMessage}
+          </Form.Text>
+          Select Quantity:{' '}
+          <input type="number" min="1" max={product.stock} defaultValue="1" onChange={_handleChangeQuantity}/>
+          <Form.Text>
+            (In stock: {product.stock})
+          </Form.Text>
+        </ListGroup.Item>
+        <ListGroup.Item>
+          <Button id="add-to-cart" disabled={buttonStatus} onClick={_handleAddToCart}>{buttonText}</Button>
+        </ListGroup.Item>
+        <ListGroup.Item>Description: <br/> {product.description}</ListGroup.Item>
+      </ListGroup>
+    </Col>
+  </Row>
+</Container>
