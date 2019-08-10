@@ -4,13 +4,6 @@ import {Link} from "react-router-dom";
 import url from '../lib/url';
 import ReactImageMagnify from 'react-image-magnify';
 
-// import ListGroup from "react-bootstrap/ListGroup";
-// import ListGroupItem from "react-bootstrap/ListGroupItem";
-// import Form from "react-bootstrap/Form";
-// import FormText from "react-bootstrap/FormText";
-// import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-
 
 export default function Product(props){
 
@@ -270,17 +263,3 @@ export default function Product(props){
     </div>
   );
 }
-
-
-// <ListGroup variant="flush">
-// <ListGroup.Item>{showSuccessMessage}</ListGroup.Item>
-// <ListGroup.Item><strong>{product.name}</strong></ListGroup.Item>
-// <ListGroup.Item>Category: {category.name}
-// </ListGroup.Item>
-// <ListGroup.Item>Price: {`$${product.price}`}</ListGroup.Item>
-// <ListGroup.Item>
-// </ListGroup.Item>
-// <ListGroup.Item>
-// </ListGroup.Item>
-// <ListGroup.Item>Description: <br/> {product.description}</ListGroup.Item>
-// </ListGroup>
