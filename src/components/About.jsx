@@ -28,7 +28,7 @@ export default function About(props){
       </Row>
 
       <Row>
-        <Col sm md={5}>
+        <Col sm md={5} style={{textAlign:'center'}}>
           <Row>
             <Image
               src={process.env.PUBLIC_URL +`/images/welcome.gif`}
