@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/proj3_react_frontend/static/css/main.f697b46d.chunk.css",
-    "main.js": "/proj3_react_frontend/static/js/main.503350ca.chunk.js",
-    "main.js.map": "/proj3_react_frontend/static/js/main.503350ca.chunk.js.map",
+    "main.css": "/proj3_react_frontend/static/css/main.35cec0dd.chunk.css",
+    "main.js": "/proj3_react_frontend/static/js/main.ca4021bd.chunk.js",
+    "main.js.map": "/proj3_react_frontend/static/js/main.ca4021bd.chunk.js.map",
     "runtime~main.js": "/proj3_react_frontend/static/js/runtime~main.9aa6579d.js",
     "runtime~main.js.map": "/proj3_react_frontend/static/js/runtime~main.9aa6579d.js.map",
-    "static/js/2.a6f1b88a.chunk.js": "/proj3_react_frontend/static/js/2.a6f1b88a.chunk.js",
-    "static/js/2.a6f1b88a.chunk.js.map": "/proj3_react_frontend/static/js/2.a6f1b88a.chunk.js.map",
+    "static/js/2.fae5b44a.chunk.js": "/proj3_react_frontend/static/js/2.fae5b44a.chunk.js",
+    "static/js/2.fae5b44a.chunk.js.map": "/proj3_react_frontend/static/js/2.fae5b44a.chunk.js.map",
     "index.html": "/proj3_react_frontend/index.html",
-    "precache-manifest.07eabe4fc5817bddadaebcbf812dd7da.js": "/proj3_react_frontend/precache-manifest.07eabe4fc5817bddadaebcbf812dd7da.js",
+    "precache-manifest.af9c53dc7611c60543d5e4fc57a5476a.js": "/proj3_react_frontend/precache-manifest.af9c53dc7611c60543d5e4fc57a5476a.js",
     "service-worker.js": "/proj3_react_frontend/service-worker.js",
-    "static/css/main.f697b46d.chunk.css.map": "/proj3_react_frontend/static/css/main.f697b46d.chunk.css.map",
+    "static/css/main.35cec0dd.chunk.css.map": "/proj3_react_frontend/static/css/main.35cec0dd.chunk.css.map",
     "static/media/main.css": "/proj3_react_frontend/static/media/pinkbubles.7f24e0c2.gif"
   }
 }
