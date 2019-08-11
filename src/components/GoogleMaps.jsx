@@ -43,15 +43,15 @@ export class MapContainer extends Component{
   render(){
 
     const mapStyles = {
-      width: "22em",
-      height: "20em",
+      width: "95%",
+      height: "73vh",
       border: "orange dashed",
     };
 
     return(
       <Map
         google = {this.props.google}
-        zoom = {13}
+        zoom = {14}
         style = {mapStyles}
         initialCenter = {{lat: -33.8660, lng: 151.2056}}
       >
@@ -90,9 +90,3 @@ export class MapContainer extends Component{
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyBXG0-gC8Yje8zYu6RJlMYVT6oX5TeEjLA'
 })(MapContainer);
-
-// <InfoWindow onClose={this.onInfoWindowClose}>
-//   <div>
-//     <h1>hello!</h1>
-//   </div>
-// </InfoWindow>
