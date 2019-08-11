@@ -20,11 +20,14 @@ export default function About(props){
         </Col>
       </Row>
       <Row className="about-welcome">
-        <Col>
+        <Col md={1}></Col>
+        <Col md={10}>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nostrum necessitatibus odio, eaque illum accusamus blanditiis. Cupiditate, autem libero nam rerum laudantium delectus. Suscipit minus tempora vitae et voluptate dolore.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nostrum necessitatibus odio, eaque illum accusamus blanditiis. Cupiditate, autem libero nam rerum laudant
+            ium delectus. Suscipit minus tempora vitae et voluptate dolore.
           </p>
         </Col>
+        <Col md={1}></Col>
       </Row>
 
       <Row>
