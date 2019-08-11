@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/proj3_react_frontend/static/css/main.5f5eb67b.chunk.css",
-    "main.js": "/proj3_react_frontend/static/js/main.432631ef.chunk.js",
-    "main.js.map": "/proj3_react_frontend/static/js/main.432631ef.chunk.js.map",
+    "main.css": "/proj3_react_frontend/static/css/main.f697b46d.chunk.css",
+    "main.js": "/proj3_react_frontend/static/js/main.503350ca.chunk.js",
+    "main.js.map": "/proj3_react_frontend/static/js/main.503350ca.chunk.js.map",
     "runtime~main.js": "/proj3_react_frontend/static/js/runtime~main.9aa6579d.js",
     "runtime~main.js.map": "/proj3_react_frontend/static/js/runtime~main.9aa6579d.js.map",
-    "static/js/2.27a39e59.chunk.js": "/proj3_react_frontend/static/js/2.27a39e59.chunk.js",
-    "static/js/2.27a39e59.chunk.js.map": "/proj3_react_frontend/static/js/2.27a39e59.chunk.js.map",
+    "static/js/2.a6f1b88a.chunk.js": "/proj3_react_frontend/static/js/2.a6f1b88a.chunk.js",
+    "static/js/2.a6f1b88a.chunk.js.map": "/proj3_react_frontend/static/js/2.a6f1b88a.chunk.js.map",
     "index.html": "/proj3_react_frontend/index.html",
-    "precache-manifest.9740ce4552ebe110b1e29c9431f82859.js": "/proj3_react_frontend/precache-manifest.9740ce4552ebe110b1e29c9431f82859.js",
+    "precache-manifest.07eabe4fc5817bddadaebcbf812dd7da.js": "/proj3_react_frontend/precache-manifest.07eabe4fc5817bddadaebcbf812dd7da.js",
     "service-worker.js": "/proj3_react_frontend/service-worker.js",
-    "static/css/main.5f5eb67b.chunk.css.map": "/proj3_react_frontend/static/css/main.5f5eb67b.chunk.css.map",
+    "static/css/main.f697b46d.chunk.css.map": "/proj3_react_frontend/static/css/main.f697b46d.chunk.css.map",
     "static/media/main.css": "/proj3_react_frontend/static/media/pinkbubles.7f24e0c2.gif"
   }
 }
