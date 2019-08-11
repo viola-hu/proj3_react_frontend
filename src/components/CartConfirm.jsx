@@ -57,9 +57,9 @@ export default function CartConfirm(props){
   );
 
 
-  let subtotal = 0;
+  let total = 0;
   lineItems.forEach(li => {
-    subtotal += li.quantity * li.product.price;
+    total += li.quantity * li.product.price;
   })
 
 
@@ -229,7 +229,7 @@ export default function CartConfirm(props){
           <th className="cart-label"><strong>Item</strong></th>
           <th className="cart-label"><strong>Quantity</strong></th>
           <th className="cart-label"><strong>Price</strong></th>
-          <th className="cart-label"><strong>Total</strong></th>
+          <th className="cart-label"><strong>Subtotal</strong></th>
         </tr>
       </thead>
 
@@ -294,8 +294,8 @@ export default function CartConfirm(props){
                 {errorMessage}
               </p>
             </td>
-            <td><strong className="cart-label">Subtotal: </strong></td>
-            <td><strong className="cart-label">${subtotal}</strong></td>
+            <td><strong className="cart-label">Total: </strong></td>
+            <td><strong className="cart-label">${total}</strong></td>
           </tr>
           <tr>
             <td> </td>

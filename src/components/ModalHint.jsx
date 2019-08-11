@@ -13,7 +13,7 @@ export default function ModalHint(props){
 
 
   return(
-    <ButtonToolbar>
+    <ButtonToolbar className="hint-button-container">
       <button className="hint-button" onClick={() => setModalShow(true)}>
         <h5>Hint</h5>
       </button>

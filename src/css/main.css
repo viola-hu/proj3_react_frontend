@@ -129,6 +129,12 @@ a:hover, a:visited, a:link, a:active{
   padding: .375rem 3rem;
 }
 
+.confirmorder-title{
+  font-weight: 600;
+  color: yellowgreen;
+  margin: 0 auto 1rem;
+}
+
 .view-your-cart{
   color: var(--teal);
   text-decoration: none;
@@ -150,6 +156,12 @@ a:hover, a:visited, a:link, a:active{
 
 .cart-thumbnail{
   max-width: 10vw;
+}
+
+.page-not-found{
+  text-align: center;
+  color: grey;
+  font-size: 1.75rem;
 }
 
 
@@ -185,9 +197,21 @@ td{
   opacity: .65;
 }
 
-#back-to-cart{
-  color:var(--teal);
-  text-decoration: none;
+.back-to-cart{
+  background-color: transparent;
+  color: yellowgreen;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  padding: 0 .5rem;
+}
+
+.back-to-cart:hover{
+  background-color: yellowgreen;
+  color: white;
+  outline: none;
+  border: 1px solid yellowgreen;
+  border-radius: 2rem;
 }
 
 .quantity-update{
@@ -212,7 +236,7 @@ td{
 }
 
 .stripe-form{
-  margin: 2rem auto;
+  margin: .5rem auto;
   border-radius: 2em;
   /* height: 100px; */
   padding: 2em;
@@ -225,6 +249,7 @@ td{
 }
 
 .submit-button{
+  margin: .5rem auto;
   border-radius: 2em;
   padding: 1em 2em;
   border: 3px dashed lightgoldenrodyellow;
@@ -258,11 +283,11 @@ td{
 }
 
 .hint-button-container{
-  text-align: left;
+  margin:.5rem auto;
 }
-.submit-button-container{
+/* .submit-button-container{
   text-align: right;
-}
+} */
 
 .cart-icon-bg{
   background: url(../images/cart-icon.png);

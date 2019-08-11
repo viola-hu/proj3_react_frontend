@@ -18,7 +18,7 @@ export default function Order(props){
 
   const [lineItems, setLineItems] = useState([]);
 
-  const [show, setShow] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     // const URL = `https://toyshoppingsite.herokuapp.com/order/${orderId}`;
@@ -34,77 +34,91 @@ export default function Order(props){
     .then(res => {
       console.log(res.data);
       setLineItems(res.data);
+      setErrorMessage('');
     })
     .catch(err => {
-      console.warn('ERROR', err);
+      console.warn('ERROR', err.response);
+      // in backend, if that's an invalid request
+      // e.g. user requested an order id that didn't belong to the user,
+      // backend will return error as set
+      // render json: {message: 'invalid request'}, status: 404
+      setErrorMessage('Page Not Found.')
     });
-  },[]);
+  },[orderId]);
 
-  let subtotal = 0;
+  let total = 0;
   lineItems.forEach(li => {
-    subtotal += li.quantity * li.product.price;
+    total += li.quantity * li.product.price;
   })
 
 
   return(
     <div>
-      <div className="success-purchase">
-        <strong>Thanks for Purchase!</strong> {' '}
-        <Link className="success-purchase-link" to={'/category/4'}>
-          <strong>Find More Toys?!</strong>
-        </Link>
+    {
+      errorMessage
+      ?
+      <div class="page-not-found">
+        {errorMessage}
       </div>
-      <Table responsive="md">
-        <thead>
-          <tr>
-            <th className="cart-label">
-              <strong>Your Order</strong>
-            </th>
-            <th className="cart-label"><strong>Item</strong></th>
-            <th className="cart-label"><strong>Quantity</strong></th>
-            <th className="cart-label"><strong>Price</strong></th>
-            <th className="cart-label"><strong>Total</strong></th>
-          </tr>
-        </thead>
+      :
+      <div>
+        <div className="success-purchase">
+          <strong>Thanks for Purchase!</strong> {' '}
+          <Link className="success-purchase-link" to={'/category/4'}>
+            <strong>Find More Toys?!</strong>
+          </Link>
+        </div>
+        <Table striped hover responsive="md">
+          <thead>
+            <tr>
+              <th className="cart-label">
+                <strong>Your Order</strong>
+              </th>
+              <th className="cart-label"><strong>Item</strong></th>
+              <th className="cart-label"><strong>Quantity</strong></th>
+              <th className="cart-label"><strong>Price</strong></th>
+              <th className="cart-label"><strong>
+                Subtotal</strong></th>
+            </tr>
+          </thead>
 
-        <tbody>
-          {lineItems.map(li => (
-            <tr key={li.product.name}>
+          <tbody>
+            {lineItems.map(li => (
+              <tr key={li.product.name}>
+                <td>
+                  <Link to={`/product/${li.product_id}`}>
+                    <Image className="cart-thumbnail" src={process.env.PUBLIC_URL + `/images/${li.product.image}`} thumbnail />
+                  </Link>
+                </td>
+                <td><strong>{li.product.name}</strong></td>
+                <td><strong>{li.quantity}</strong></td>
+                <td><strong>${li.product.price}</strong></td>
+                <td><strong>${li.quantity * li.product.price}</strong></td>
+              </tr>
+            ))
+          }
+            <tr>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td><strong className="cart-label">Total: </strong></td>
+              <td><strong className="cart-label">${total}</strong></td>
+            </tr>
+            <tr>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
               <td>
-                <Link to={`/product/${li.product_id}`}>
-                  <Image className="cart-thumbnail" src={process.env.PUBLIC_URL + `/images/${li.product.image}`} thumbnail />
+                <Link to={'/category/4'}>
+                  <Button className="back-to-home">Find More Toys</Button>
                 </Link>
               </td>
-              <td><strong>{li.product.name}</strong></td>
-              <td><strong>{li.quantity}</strong></td>
-              <td><strong>${li.product.price}</strong></td>
-              <td><strong>${li.quantity * li.product.price}</strong></td>
             </tr>
-          ))
-        }
-          <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td><strong className="cart-label">Subtotal: </strong></td>
-            <td><strong className="cart-label">${subtotal}</strong></td>
-          </tr>
-          <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td>
-              <Link to={'/category/4'}>
-                <Button className="back-to-home">Find More Toys</Button>
-              </Link>
-            </td>
-          </tr>
-        </tbody>
-      </Table>
+          </tbody>
+        </Table>
+      </div>
+    }
     </div>
   );
-
-
-
 }

@@ -2,10 +2,14 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
 import url from '../lib/url';
+import Payment from './Payment';
 
 import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export default function CheckOut(props){
   const jwt = localStorage.getItem('jwt');
@@ -38,65 +42,89 @@ export default function CheckOut(props){
     });
   },[]);
 
-  let subtotal = 0;
+  let total = 0;
   lineItems.forEach(li => {
-    subtotal += li.quantity * li.product.price;
+    total += li.quantity * li.product.price;
   })
 
   return(
-    <Table responsive="md">
-      <thead>
-        <tr>
-          <th className="cart-label">
-            <strong>Confirm order</strong>
-          </th>
-          <th className="cart-label"><strong>Item</strong></th>
-          <th className="cart-label"><strong>Quantity</strong></th>
-          <th className="cart-label"><strong>Price</strong></th>
-          <th className="cart-label"><strong>Total</strong></th>
-        </tr>
-      </thead>
+    <Container style={{maxWidth:'100vw'}}>
+      <Row>
+        <Col lg={8}>
+          <Row>
+            <h3 className="confirmorder-title">Confirm order</h3>
+          </Row>
+          <Table striped hover responsive="lg">
+            <thead>
+              <tr>
+                <th className="cart-label">
+                  <Link to={'/cart'}>
+                    <Button className="back-to-cart">
+                      Back to cart
+                    </Button>
+                  </Link>
+                </th>
+                <th className="cart-label"><strong>Item</strong></th>
+                <th className="cart-label"><strong>Quantity</strong></th>
+                <th className="cart-label"><strong>Price</strong></th>
+                <th className="cart-label"><strong>Subtotal</strong></th>
+              </tr>
+            </thead>
 
-      <tbody>
-        {lineItems.map(li => (
-          <tr key={li.product.name}>
-            <td>
-              <Link to={`/product/${li.product_id}`}>
-                <Image className="cart-thumbnail" src={process.env.PUBLIC_URL + `/images/${li.product.image}`} thumbnail />
-              </Link>
-            </td>
-            <td><strong>{li.product.name}</strong></td>
-            <td><strong>{li.quantity}</strong></td>
-            <td><strong>${li.product.price}</strong></td>
-            <td><strong>${li.quantity * li.product.price}</strong></td>
-          </tr>
-        ))
-      }
-        <tr>
-          <td> </td>
-          <td> </td>
-          <td>
-            <Link to={'/cart'} id="back-to-cart">
-              <strong>
-                Back to cart
-              </strong>
-            </Link>
-          </td>
-          <td><strong className="cart-label">Subtotal: </strong></td>
-          <td><strong className="cart-label">${subtotal}</strong></td>
-        </tr>
-        <tr>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td>
-            <Link to={'/payment'}>
-              <Button id="pay-by-card">Pay by Card</Button>
-            </Link>
-          </td>
-        </tr>
-      </tbody>
-    </Table>
+            <tbody>
+              {lineItems.map(li => (
+                <tr key={li.product.name}>
+                  <td>
+                    <Link to={`/product/${li.product_id}`}>
+                      <Image className="cart-thumbnail" src={process.env.PUBLIC_URL + `/images/${li.product.image}`} thumbnail />
+                    </Link>
+                  </td>
+                  <td><strong>{li.product.name}</strong></td>
+                  <td><strong>{li.quantity}</strong></td>
+                  <td><strong>${li.product.price}</strong></td>
+                  <td><strong>${li.quantity * li.product.price}</strong></td>
+                </tr>
+              ))
+            }
+              <tr>
+                <td> </td>
+                <td> </td>
+                <td>
+                </td>
+                <td><strong className="cart-label">Total: </strong></td>
+                <td><strong className="cart-label">${total}</strong></td>
+              </tr>
+            </tbody>
+          </Table>
+        </Col>
+
+        <Col lg={4}>
+          <Payment />
+        </Col>
+      </Row>
+    </Container>
+
   );
 }
+
+
+
+// <Link to={'/cart'}>
+//   <Button className="back-to-cart">
+//     Back to cart
+//   </Button>
+// </Link>
+
+
+
+// <tr>
+//   <td> </td>
+//   <td> </td>
+//   <td> </td>
+//   <td> </td>
+//   <td>
+//     <Link to={'/payment'}>
+//       <Button id="pay-by-card">Pay by Card</Button>
+//     </Link>
+//   </td>
+// </tr>
