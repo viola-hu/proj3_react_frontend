@@ -9,7 +9,7 @@ export class MapContainer extends Component{
       stores: [
         {
           coords: {lat:-33.8717, lng:151.2067},
-          name: "V's Toy - QVB",
+          name: "V's Toy - The QVB",
           location: "455 George St, Sydney NSW 2000",
           directionURL: "https://www.google.com/maps/place/455+George+St,+Sydney+NSW+2000/@-33.8721094,151.2045493,17z/data=!3m1!4b1!4m5!3m4!1s0x6b12ae3e8d0f5583:0xd8cb208eb31f2b0d!8m2!3d-33.8721139!4d151.206738"
         },
