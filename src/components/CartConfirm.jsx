@@ -6,6 +6,7 @@ import url from '../lib/url';
 import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 
 
 
@@ -45,15 +46,27 @@ export default function CartConfirm(props){
 
   // in case there's no line_items inside the cart of the current_user
   let noLineItemsToShow = (
-    <tbody>
-      <tr>
-        <td>There's no item in your cart.</td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-    </tbody>
+    <div>
+      <Table striped hover responsive="md">
+        <thead>
+          <tr>
+            <th className="cart-label"><strong>My Cart</strong></th>
+            <th className="cart-label"><strong>Item</strong></th>
+            <th className="cart-label"><strong>Quantity</strong></th>
+            <th className="cart-label"><strong>Price</strong></th>
+            <th className="cart-label"><strong>Subtotal</strong></th>
+          </tr>
+        </thead>
+      </Table>
+
+      <div className="no-items-in-cart">
+        <div>There's no item in your cart.</div>
+        <Image
+          src={process.env.PUBLIC_URL + `/images/nopurchaseyet02.gif`}
+          style={{maxWidth: '100%'}}
+        />
+      </div>
+    </div>
   );
 
 
@@ -222,95 +235,96 @@ export default function CartConfirm(props){
 
 
   return(
-    <Table striped hover responsive="md">
-      <thead>
-        <tr>
-          <th className="cart-label"><strong>My Cart</strong></th>
-          <th className="cart-label"><strong>Item</strong></th>
-          <th className="cart-label"><strong>Quantity</strong></th>
-          <th className="cart-label"><strong>Price</strong></th>
-          <th className="cart-label"><strong>Subtotal</strong></th>
-        </tr>
-      </thead>
-
+    <Container>
       { // if there's no line_items in the cart
-       !lineItems.length
-       ?
-       noLineItemsToShow
-       :
-      (
-        <tbody>
-          {lineItems.map(li => (
-            <tr key={li.product.name}>
-              <td>
-                <Link to={`/product/${li.product_id}`}>
-                  <Image
-                    className="cart-thumbnail"
-                    src={process.env.PUBLIC_URL +`/images/${li.product.image}`}
-                    thumbnail
-                  />
-                </Link>
-              </td>
-
-              <td className="product-name"><br/><strong>{li.product.name}</strong></td>
-
-              <td>
-                <form className="quantity-update change-quantity" onSubmit={_handleUpdateQuantity}>
-                  <input
-                    type="number"
-                    min="1"
-                    max={li.product.stock}
-                    name={li.id}
-                    defaultValue={li.quantity}
-                  /> {' '}
-                  <input
-                    type="submit"
-                    className="update-quantity"
-                    value="Update"
-                    disabled={false}
-                  /> {' '}
-                </form>
-                <Image
-                  name={li.id}
-                  className="trash change-quantity"
-                  src={process.env.PUBLIC_URL + '/images/small-trash.png'}
-                  title="Remove"
-                  onClick={_handleRemoveLineItem}
-                  fluid
-                />
-              </td>
-
-              <td><br/><strong>${li.product.price}</strong></td>
-
-              <td><br/><strong>${li.quantity * li.product.price}</strong></td>
+        !lineItems.length
+        ?
+        noLineItemsToShow
+        :
+        <Table striped hover responsive="md">
+          <thead>
+            <tr>
+              <th className="cart-label"><strong>My Cart</strong></th>
+              <th className="cart-label"><strong>Item</strong></th>
+              <th className="cart-label"><strong>Quantity</strong></th>
+              <th className="cart-label"><strong>Price</strong></th>
+              <th className="cart-label"><strong>Subtotal</strong></th>
             </tr>
-           ))
-          }
-          <tr>
-            <td> </td>
-            <td> </td>
-            <td>
-              <p className="errorMessage">
-                {errorMessage}
-              </p>
-            </td>
-            <td><strong className="cart-label">Total: </strong></td>
-            <td><strong className="cart-label">${total}</strong></td>
-          </tr>
-          <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td>
-              <Link to={'/checkout'}>
-                <Button id="checkout">Check Out</Button>
-              </Link>
-            </td>
-          </tr>
-        </tbody>
-      )}
-    </Table>
+          </thead>
+
+            <tbody>
+              {lineItems.map(li => (
+                <tr key={li.product.name}>
+                  <td>
+                    <Link to={`/product/${li.product_id}`}>
+                      <Image
+                        className="cart-thumbnail"
+                        src={process.env.PUBLIC_URL +`/images/${li.product.image}`}
+                        thumbnail
+                      />
+                    </Link>
+                  </td>
+
+                  <td className="product-name"><br/><strong>{li.product.name}</strong></td>
+
+                  <td>
+                    <form className="quantity-update change-quantity" onSubmit={_handleUpdateQuantity}>
+                      <input
+                        type="number"
+                        min="1"
+                        max={li.product.stock}
+                        name={li.id}
+                        defaultValue={li.quantity}
+                      /> {' '}
+                      <input
+                        type="submit"
+                        className="update-quantity"
+                        value="Update"
+                        disabled={false}
+                      /> {' '}
+                    </form>
+                    <Image
+                      name={li.id}
+                      className="trash change-quantity"
+                      src={process.env.PUBLIC_URL + '/images/small-trash.png'}
+                      title="Remove"
+                      onClick={_handleRemoveLineItem}
+                      fluid
+                    />
+                  </td>
+
+                  <td><br/><strong>${li.product.price}</strong></td>
+
+                  <td><br/><strong>${li.quantity * li.product.price}</strong></td>
+                </tr>
+               ))
+              }
+              <tr>
+                <td> </td>
+                <td> </td>
+                <td>
+                  <p className="errorMessage">
+                    {errorMessage}
+                  </p>
+                </td>
+                <td><strong className="cart-label">Total: </strong></td>
+                <td><strong className="cart-label">${total}</strong></td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td>
+                  <Link to={'/checkout'}>
+                    <Button id="checkout">Check Out</Button>
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+        </Table>
+      }
+    </Container>
   );
 } // CartConfirm
 

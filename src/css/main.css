@@ -158,6 +158,13 @@ a:hover, a:visited, a:link, a:active{
   max-width: 10vw;
 }
 
+.no-items-in-cart{
+  text-align: center;
+  font-size: 1.75rem;
+  color: grey;
+  padding: 1rem 0;
+}
+
 .page-not-found{
   text-align: center;
   color: grey;
