@@ -37,7 +37,7 @@ export default function About(props){
           </Row>
           <h5 className="shop-title">
             <Image style={{width:"2.5rem"}} src={process.env.PUBLIC_URL +`/images/icon-shop.png`} /> {' '}
-            V's Toy - QVB
+            V's Toy - The QVB
           </h5>
           <p>
             455 George St, Sydney NSW 2000
