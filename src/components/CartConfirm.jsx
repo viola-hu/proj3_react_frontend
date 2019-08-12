@@ -268,6 +268,7 @@ export default function CartConfirm(props){
                   <td className="product-name"><br/><strong>{li.product.name}</strong></td>
 
                   <td>
+
                     <form className="quantity-update change-quantity" onSubmit={_handleUpdateQuantity}>
                       <input
                         type="number"
@@ -290,7 +291,10 @@ export default function CartConfirm(props){
                       title="Remove"
                       onClick={_handleRemoveLineItem}
                       fluid
-                    />
+                    /> <br />
+                    <small className="errorMessage">
+                      {errorMessage}
+                    </small>
                   </td>
 
                   <td><br/><strong>${li.product.price}</strong></td>
@@ -303,9 +307,6 @@ export default function CartConfirm(props){
                 <td> </td>
                 <td> </td>
                 <td>
-                  <p className="errorMessage">
-                    {errorMessage}
-                  </p>
                 </td>
                 <td><strong className="cart-label">Total: </strong></td>
                 <td><strong className="cart-label">${total}</strong></td>
@@ -327,10 +328,3 @@ export default function CartConfirm(props){
     </Container>
   );
 } // CartConfirm
-
-
-
-
-
-
-// <div className="errorMessage">{errorMessage}</div>

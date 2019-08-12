@@ -4,7 +4,7 @@ import './css/bootstrap.min.css';// import Bootstrap css
 import './css/main.css';// import custom css
 
 import BootNav from './components/BootNav';
-// import Image from "react-bootstrap/Image";
+import Image from "react-bootstrap/Image";
 
 import Home from "./components/Home";
 import About from "./components/About";
@@ -33,15 +33,11 @@ const Routes = (
       <Route exact path="/order/:id" component={Order}/>
       <Route exact path="/search/:q" component={SearchResults}/>
 
-
-
-      <footer className="body-footer">
-        {
-        // <Image className="happykids" src="/images/happykids.jpg" />
-        // <img src={process.env.PUBLIC_URL + '/happykids.jpg'} />
-        }
-
+      <footer>
+        <Image style={{width: '50vw'}} src={process.env.PUBLIC_URL + `/images/happykidsplaying01.jpg`} fluid />
+        <Image style={{width: '50vw'}} src={process.env.PUBLIC_URL + `/images/happykidsplaying01.jpg`} fluid />
       </footer>
+
     </div>
   </Router>
 );

@@ -135,7 +135,7 @@ class CheckoutForm extends Component {
 
   render(){
     let errorMessage = (
-      <p className="errorMessage"><small>
+      <p className="checkout-errorMessage"><small>
         {this.state.message}
       </small></p>
     );

@@ -162,46 +162,7 @@ export default function MyAccount(props){
         </Row>
       </Container>
 
-      <footer>
-        <Image style={{maxWidth: '50vw'}} src={process.env.PUBLIC_URL + `/images/happykidsplaying01.jpg`} fluid />
-        <Image style={{maxWidth: '50vw'}} src={process.env.PUBLIC_URL + `/images/happykidsplaying01.jpg`} fluid />
-      </footer>
     </div>
 
   );
 }
-
-// <Image style={{maxWidth: '45vw'}} src={process.env.PUBLIC_URL + `/images/playingkids001.png`} fluid />
-// <Image style={{maxWidth: '55vw'}} src={process.env.PUBLIC_URL + `/images/playingkids002.png`} fluid />
-
-
-// <Accordion.Toggle as={Card.Header} eventKey="1">
-//   Order2
-// </Accordion.Toggle>
-// <Accordion.Collapse eventKey="1">
-//   <ListGroup>
-//     <ListGroup.Item>No style</ListGroup.Item>
-//     <ListGroup.Item variant="primary">Primary</ListGroup.Item>
-//     <ListGroup.Item action variant="secondary">
-//       Secondary
-//     </ListGroup.Item>
-//     <ListGroup.Item action variant="success">
-//       Success
-//     </ListGroup.Item>
-//     <ListGroup.Item action variant="danger">
-//       Danger
-//     </ListGroup.Item>
-//     <ListGroup.Item action variant="warning">
-//       Warning
-//     </ListGroup.Item>
-//     <ListGroup.Item action variant="info">
-//       Info
-//     </ListGroup.Item>
-//     <ListGroup.Item action variant="light">
-//       Light
-//     </ListGroup.Item>
-//     <ListGroup.Item action variant="dark">
-//       Dark
-//     </ListGroup.Item>
-//   </ListGroup>
-// </Accordion.Collapse>

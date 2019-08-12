@@ -95,7 +95,7 @@ export default function BootNav(props){
     // already logged in
     buttonLeft = (
       <Link to={'/account'}>
-        <Button className="btn-space" variant="warning">
+        <Button className="nav-btn-space" variant="warning">
           Account
         </Button>
       </Link>
@@ -112,7 +112,7 @@ export default function BootNav(props){
     // already logged in
     buttonRight = (
       <div>
-        <Button className="btn-space" variant="info" onClick={_handleLogOut}>
+        <Button className="nav-btn-space" variant="info" onClick={_handleLogOut}>
           LogOut
         </Button>
         <Link to={'/cart'} className="cart-icon-bg">
@@ -128,42 +128,48 @@ export default function BootNav(props){
   }
 
   return(
-    <Navbar sticky="top" expand="md" className="entireBody">
+    <Navbar sticky="top" expand="lg" className="entireBody">
       <Navbar.Brand href="#/">
         <div>V's Toy</div>
         <img className="happy-kids" src={process.env.PUBLIC_URL + '/images/happy-kids.png'}/>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <ButtonToolbar>
-            <Button className="btn-space" href="#/" variant="danger">Home</Button>
-            <Button className="btn-space" href="#about" variant="primary">About</Button>
-          </ButtonToolbar>
 
-          <Dropdown>
-            <Dropdown.Toggle className="btn-space" variant="success" id="dropdown-basic">
-              Category
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <NavDropdown.Item id="category-1" href="#category/1">Age 0-2</NavDropdown.Item>
-              <NavDropdown.Item id="category-2" href="#category/2">Age 2-5</NavDropdown.Item>
-              <NavDropdown.Item id="category-3" href="#category/3">Age 5-8</NavDropdown.Item>
-              <NavDropdown.Item id="category-4" href="#category/4">Age over 8</NavDropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Nav>
         <Nav>
-          <Form inline onSubmit={_handleSubmit}>
-            <FormControl type="text" placeholder="e.g. hellokitty" className="mr-sm-2" onChange={_handleChange}/>
-            <Button type="submit" variant="secondary" className="btn-space" size="sm">Search</Button>
-          </Form>
+          <ButtonToolbar>
+            <div>
+              <Button className="nav-btn-space" href="#/" variant="danger">Home</Button>
+            </div>
+            <div>
+              <Button className="nav-btn-space" href="#about" variant="primary">About</Button>
+            </div>
+            <Dropdown>
+              <Dropdown.Toggle className="nav-btn-space" variant="success" id="dropdown-basic">
+                Category
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <NavDropdown.Item id="category-1" href="#category/1">Age 0-2</NavDropdown.Item>
+                <NavDropdown.Item id="category-2" href="#category/2">Age 2-5</NavDropdown.Item>
+                <NavDropdown.Item id="category-3" href="#category/3">Age 5-8</NavDropdown.Item>
+                <NavDropdown.Item id="category-4" href="#category/4">Age over 8</NavDropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </ButtonToolbar>
+          <ButtonToolbar>
+            <Form inline onSubmit={_handleSubmit}>
+              <FormControl type="text" placeholder="e.g. hellokitty" className="search-form" onChange={_handleChange}/>
+              <Button type="submit" variant="secondary" className="nav-btn-space" size="sm">Search</Button>
+            </Form>
+          </ButtonToolbar>
         </Nav>
 
-        <Nav className="mr-auto">
-          {buttonLeft}
-          {buttonRight}
+        <Nav >
+          <ButtonToolbar>
+            {buttonLeft}
+            {buttonRight}
+          </ButtonToolbar>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -184,7 +190,7 @@ export default function BootNav(props){
 
 // buttonRight = (
 //   <div>
-//     <Button className="btn-space" variant="info" onClick={_handleLogOut}>
+//     <Button className="nav-btn-space" variant="info" onClick={_handleLogOut}>
 //       LogOut
 //     </Button>
 //     <Link to={'/cart'}>

@@ -15,7 +15,7 @@ export default function Home(props){
   return(
     <Container>
       <Row>
-        <Col sm={8} style={{padding:0}}>
+        <Col lg={8} style={{padding:0}}>
           <Carousel>
             <Carousel.Item>
               <Container className="carousel-container">
@@ -151,7 +151,7 @@ export default function Home(props){
           </Carousel>
         </Col>
 
-        <Col className="home-right-col" sm={4}>
+        <Col className="home-right-col" lg={4}>
           <h1 className="home-category-title">
             V's Toy
           </h1>

@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Image from "react-bootstrap/Image";
 
 
 export default function SearchResults(props){
@@ -59,9 +60,13 @@ export default function SearchResults(props){
   let whatToShow;
   if(products.length === 0){
     whatToShow = (
-      <Row className="found-no-toys-row">
-        <h5 className="found-result">{message}</h5>
-      </Row>
+      <div className="found-no-toys-row">
+        <div>{message}</div>
+        <Image
+          src={process.env.PUBLIC_URL + `/images/thanks.gif`}
+          style={{maxWidth: '60%'}}
+        />
+    </div>
     );
   } else {
     whatToShow = (
@@ -78,7 +83,7 @@ export default function SearchResults(props){
       <Row>
         {
           products.map(product => (
-            <Col sm={12} md={4} style={{margin: '1rem 0'}} key={product.name}>
+            <Col  md={6} lg={4} style={{margin: '1rem 0'}} key={product.name}>
               <Card className="card-background">
                 <Link to={`/product/${product.id}`}>
                   <Card.Img

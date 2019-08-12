@@ -48,7 +48,7 @@ export default function CheckOut(props){
   })
 
   return(
-    <Container style={{maxWidth:'100vw'}}>
+    <Container style={{maxWidth:'90vw'}}>
       <Row>
         <Col lg={8}>
           <Row>
@@ -72,20 +72,21 @@ export default function CheckOut(props){
             </thead>
 
             <tbody>
-              {lineItems.map(li => (
-                <tr key={li.product.name}>
-                  <td>
-                    <Link to={`/product/${li.product_id}`}>
-                      <Image className="cart-thumbnail" src={process.env.PUBLIC_URL + `/images/${li.product.image}`} thumbnail />
-                    </Link>
-                  </td>
-                  <td><strong>{li.product.name}</strong></td>
-                  <td><strong>{li.quantity}</strong></td>
-                  <td><strong>${li.product.price}</strong></td>
-                  <td><strong>${li.quantity * li.product.price}</strong></td>
-                </tr>
-              ))
-            }
+              {
+                lineItems.map(li => (
+                  <tr key={li.product.name}>
+                    <td>
+                      <Link to={`/product/${li.product_id}`}>
+                        <Image className="cart-thumbnail" src={process.env.PUBLIC_URL + `/images/${li.product.image}`} thumbnail />
+                      </Link>
+                    </td>
+                    <td><strong>{li.product.name}</strong></td>
+                    <td><strong>{li.quantity}</strong></td>
+                    <td><strong>${li.product.price}</strong></td>
+                    <td><strong>${li.quantity * li.product.price}</strong></td>
+                  </tr>
+                ))
+              }
               <tr>
                 <td> </td>
                 <td> </td>
@@ -97,7 +98,6 @@ export default function CheckOut(props){
             </tbody>
           </Table>
         </Col>
-
         <Col lg={4}>
           <Payment />
         </Col>
@@ -106,25 +106,3 @@ export default function CheckOut(props){
 
   );
 }
-
-
-
-// <Link to={'/cart'}>
-//   <Button className="back-to-cart">
-//     Back to cart
-//   </Button>
-// </Link>
-
-
-
-// <tr>
-//   <td> </td>
-//   <td> </td>
-//   <td> </td>
-//   <td> </td>
-//   <td>
-//     <Link to={'/payment'}>
-//       <Button id="pay-by-card">Pay by Card</Button>
-//     </Link>
-//   </td>
-// </tr>

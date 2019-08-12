@@ -12,8 +12,19 @@
 }
 
 .navbar{
-  /* background-color: rgb(87, 223, 52) */
+  padding: 1rem 1rem;
+}
+.navbar-collapse{
+  justify-content: space-between;
+}
 
+.nav-btn-space{
+  margin: .5rem .25rem .5rem 0;
+}
+
+.search-form{
+  margin: 0 0.25rem 0 0;
+  width: 75%;
 }
 
 .a{
@@ -134,11 +145,18 @@ a:hover, a:visited, a:link, a:active{
   border-color:lightgrey;
 }
 
-#pay-by-card, #checkout{
-  background: var(--teal);
-  border-color: var(--teal);
-  border-radius: 20px;
+#checkout{
+  background: yellowgreen;
+  border: yellowgreen;
+  opacity: .85;
+  border-radius: 2rem;
   padding: .375rem 3rem;
+  outline: none;
+}
+
+#checkout:hover{
+  opacity: 1;
+  border: yellowgreen;
 }
 
 .confirmorder-title{
@@ -170,7 +188,7 @@ a:hover, a:visited, a:link, a:active{
   max-width: 10vw;
 }
 
-.no-items-in-cart{
+.found-no-toys-row, .no-items-in-cart{
   text-align: center;
   font-size: 1.75rem;
   color: grey;
@@ -200,9 +218,11 @@ td{
   padding: .2rem .6rem;
   color:white;
   text-decoration: none;
-  background-color: var(--pink);
+  background-color: hotpink;
   border:none;
   border-radius: 20px;
+  font-weight: 600;
+  outline: none;
 }
 
 
@@ -210,7 +230,7 @@ td{
 .update-quantity:disabled{
   padding: .1rem .6rem;
   color: #fff;
-  background-color: var(--pink);
+  background-color: lightgrey;
   opacity: .65;
 }
 
@@ -368,7 +388,7 @@ td{
   color:yellowgreen;
 }
 
-.errorMessage{
+.checkout-errorMessage{
   color:red;
   margin-top: 1rem;
   margin-bottom: auto;
@@ -430,9 +450,6 @@ td{
   color:yellowgreen;
 }
 
-.found-no-toys-row{
-  text-align: center;
-}
 
 
 .account-table-header, .update-account{
