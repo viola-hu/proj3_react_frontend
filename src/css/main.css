@@ -687,3 +687,12 @@ td{
   }
 
 }
+
+@media (max-width: 480px) {
+  .home-category{
+    text-align: center;
+    position: relative;
+    top: 25%;
+    font-size: 1.5rem;
+  }
+}
