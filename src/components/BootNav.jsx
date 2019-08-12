@@ -130,7 +130,7 @@ export default function BootNav(props){
   return(
     <Navbar sticky="top" expand="lg" className="entireBody">
       <Navbar.Brand href="#/">
-        <div>V's Toy</div>
+        <div className="store-name">V's Toy</div>
         <img className="happy-kids" src={process.env.PUBLIC_URL + '/images/happy-kids.png'}/>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

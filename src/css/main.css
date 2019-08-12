@@ -609,13 +609,13 @@ td{
 }
 
 .carousel-container{
-  background-color: lightsteelblue;
+  background-color: lightblue;
 }
 
 .home-category-title{
   color: grey;
   font-weight: 600;
-  text-shadow: 1px 1px darkgrey;
+  text-shadow: 2px 2px lightgrey;
   margin:0;
 }
 
@@ -634,6 +634,13 @@ td{
   background-size: contain;
 }
 
+.store-name{
+  color: grey;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-shadow: 1px 1px lightgrey;
+  text-align: center;
+}
 
 .product-name{
   margin-bottom: 1rem;
