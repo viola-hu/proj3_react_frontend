@@ -291,10 +291,7 @@ export default function CartConfirm(props){
                       title="Remove"
                       onClick={_handleRemoveLineItem}
                       fluid
-                    /> <br />
-                    <small className="errorMessage">
-                      {errorMessage}
-                    </small>
+                    />
                   </td>
 
                   <td><br/><strong>${li.product.price}</strong></td>
@@ -307,6 +304,9 @@ export default function CartConfirm(props){
                 <td> </td>
                 <td> </td>
                 <td>
+                  <small className="errorMessage">
+                    {errorMessage}
+                  </small>
                 </td>
                 <td><strong className="cart-label">Total: </strong></td>
                 <td><strong className="cart-label">${total}</strong></td>
