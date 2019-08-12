@@ -28,24 +28,36 @@ a:hover, a:visited, a:link, a:active{
   max-height: 7vh;
 }
 
-.dropdown-menu a{
-  color: orange;
+
+.dropdown-menu{
+  padding: 0;
+  margin: .25rem 0 0;
 }
-.dropdown-menu a:hover{
+
+.dropdown-item{
+  opacity: .85;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.dropdown-item:hover{
+  opacity: 1;
   color: white;
 }
 
 #category-1{
-  background-color: rgb(245, 204, 235);
+  background-color: pink;
 }
 #category-2{
-  background-color:rgb(243, 245, 144);
+  background-color: gold;
 }
 #category-3{
-  background-color:rgb(173, 244, 94)
+  background-color: yellowgreen;
 }
 #category-4{
-  background-color:rgb(135, 247, 234);
+  background-color: turquoise;
 }
 
 .body-footer{
