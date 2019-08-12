@@ -184,7 +184,7 @@ td{
   cursor: pointer;
 }
 
-.back-to-home, .update-quantity{
+.update-quantity{
   padding: .2rem .6rem;
   color:white;
   text-decoration: none;
@@ -193,9 +193,7 @@ td{
   border-radius: 20px;
 }
 
-.back-to-home:hover{
-  background-color: var(--teal);
-}
+
 
 .update-quantity:disabled{
   padding: .1rem .6rem;
@@ -320,16 +318,32 @@ td{
 
 
 
-.success-purchase-link, .success-purchase{
-  color:var(--cyan);
+.success-purchase{
+  text-align: center;
+  font-size: 1.5rem;
+  color: yellowgreen;
+  padding: 1rem 0;
+  font-weight: 600;
 }
 
-.success-purchase-link{
-  text-decoration: none;
+.find-more-toys{
+  text-align: center;
 }
-.success-purchase-link:hover{
+
+.back-to-home{
+  padding: .5rem 1rem;
+  color: hotpink;
   text-decoration: none;
-  color:var(--pink);
+  background-color: white;
+  border: hotpink 2px solid;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.back-to-home:hover{
+  background-color: hotpink;
+  border:hotpink;
+  color:white;
 }
 
 .note{

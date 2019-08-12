@@ -6,6 +6,9 @@ import url from '../lib/url';
 import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 
 
@@ -61,63 +64,64 @@ export default function Order(props){
         {errorMessage}
       </div>
       :
-      <div>
-        <div className="success-purchase">
-          <strong>Thanks for Purchase!</strong> {' '}
-          <Link className="success-purchase-link" to={'/category/4'}>
-            <strong>Find More Toys?!</strong>
-          </Link>
-        </div>
-        <Table striped hover responsive="md">
-          <thead>
-            <tr>
-              <th className="cart-label">
-                <strong>Your Order</strong>
-              </th>
-              <th className="cart-label"><strong>Item</strong></th>
-              <th className="cart-label"><strong>Quantity</strong></th>
-              <th className="cart-label"><strong>Price</strong></th>
-              <th className="cart-label"><strong>
-                Subtotal</strong></th>
-            </tr>
-          </thead>
+      <Container>
+        <Row>
+          <Col lg={8}>
+            <Table striped hover responsive="lg">
+              <thead>
+                <tr>
+                  <th className="cart-label">
+                    <strong>My Order</strong>
+                  </th>
+                  <th className="cart-label"><strong>Item</strong></th>
+                  <th className="cart-label"><strong>Quantity</strong></th>
+                  <th className="cart-label"><strong>Price</strong></th>
+                  <th className="cart-label"><strong>
+                    Subtotal</strong></th>
+                </tr>
+              </thead>
 
-          <tbody>
-            {lineItems.map(li => (
-              <tr key={li.product.name}>
-                <td>
-                  <Link to={`/product/${li.product_id}`}>
-                    <Image className="cart-thumbnail" src={process.env.PUBLIC_URL + `/images/${li.product.image}`} thumbnail />
-                  </Link>
-                </td>
-                <td><strong>{li.product.name}</strong></td>
-                <td><strong>{li.quantity}</strong></td>
-                <td><strong>${li.product.price}</strong></td>
-                <td><strong>${li.quantity * li.product.price}</strong></td>
-              </tr>
-            ))
-          }
-            <tr>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-              <td><strong className="cart-label">Total: </strong></td>
-              <td><strong className="cart-label">${total}</strong></td>
-            </tr>
-            <tr>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-              <td>
-                <Link to={'/category/4'}>
-                  <Button className="back-to-home">Find More Toys</Button>
-                </Link>
-              </td>
-            </tr>
-          </tbody>
-        </Table>
-      </div>
+              <tbody>
+                {lineItems.map(li => (
+                  <tr key={li.product.name}>
+                    <td>
+                      <Link to={`/product/${li.product_id}`}>
+                        <Image className="cart-thumbnail" src={process.env.PUBLIC_URL + `/images/${li.product.image}`} thumbnail />
+                      </Link>
+                    </td>
+                    <td><strong>{li.product.name}</strong></td>
+                    <td><strong>{li.quantity}</strong></td>
+                    <td><strong>${li.product.price}</strong></td>
+                    <td><strong>${li.quantity * li.product.price}</strong></td>
+                  </tr>
+                ))
+              }
+                <tr>
+                  <td> </td>
+                  <td> </td>
+                  <td> </td>
+                  <td><strong className="cart-label">Total: </strong></td>
+                  <td><strong className="cart-label">${total}</strong></td>
+                </tr>
+              </tbody>
+            </Table>
+          </Col>
+          <Col lg={4}>
+            <div className="success-purchase">Thanks for Purchase!</div> {' '}
+
+            <Image
+              src={process.env.PUBLIC_URL + `/images/thanks.gif`}
+              style={{width: '100%'}}
+            />
+
+          <div className="find-more-toys">
+              <Link to={'/'}>
+                <Button className="back-to-home">Find More Toys</Button>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     }
     </div>
   );
