@@ -6,11 +6,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 
-
-
 export default function About(props){
-
-
 
   return(
     <Container className="about-container">
@@ -73,5 +69,3 @@ export default function About(props){
     </Container>
   );
 }
-
-// <Image className="about-image" src={process.env.PUBLIC_URL +`/images/happykidsplaying05.png`} />

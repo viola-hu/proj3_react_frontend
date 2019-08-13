@@ -24,7 +24,6 @@ export default function MyAccount(props){
   const userName = localStorage.getItem('userName');
   const userEmail = localStorage.getItem('userEmail');
 
-  //************** TODO: tomorrow **********************
   // 1, when page loaded, first thing to retrieve all the user's orders including line-items
   useEffect(() => {
 
@@ -53,9 +52,10 @@ export default function MyAccount(props){
     });
   },[]);
 
-  // 2, user update account +
+  // ****** TODO *********
+  // 2, update Account
   // 3, delete Account
-  // 4, CSS
+
 
 
 
@@ -161,8 +161,6 @@ export default function MyAccount(props){
           </Col>
         </Row>
       </Container>
-
     </div>
-
   );
 }

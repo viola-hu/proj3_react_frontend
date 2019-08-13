@@ -54,8 +54,7 @@ class CheckoutForm extends Component {
 
     // Only after the above token is generated, will then run the below code and post the data including the token to server, to actually make the charge!
 
-    // const URL = `https://toyshoppingsite.herokuapp.com/charge`;
-    const URL = `${url.URL}/charge`; // for test
+    const URL = `${url.URL}/charge`; 
 
     const jwt = localStorage.getItem('jwt');
 

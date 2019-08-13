@@ -20,7 +20,6 @@ export default function Category(props){
   // console.log('categoryId:',categoryId);
 
   const [products, setProducts] = useState([]);
-  // const [jwt, setJwt] = useState(localStorage.getItem('jwt'))
 
   // LEARNING:
   // whenever the props id changes, useEffect will catch that change and render the whole page
@@ -33,8 +32,6 @@ export default function Category(props){
   const getProductsOfCategory = ()=>{
     // console.log('make axios request!');
 
-    // const URL = `https://toyshoppingsite.herokuapp.com/categories/${id}`;
-    // const URL = `http://localhost:3000/categories/${id}`;
     const URL = `${url.URL}/categories/${id}`;
 
     // LEARNING:

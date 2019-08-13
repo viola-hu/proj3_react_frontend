@@ -44,7 +44,6 @@ function SignUpForm(props){
   const _handleSubmit = (event) => {
     event.preventDefault();
 
-    // const URL = "https://toyshoppingsite.herokuapp.com/signup";
     const URL = `${url.URL}/signup`;
 
     const data = {
@@ -69,7 +68,6 @@ function SignUpForm(props){
 
 // *********************************************
   const getTokenAndRedirect = () => {
-    // const URL = "https://toyshoppingsite.herokuapp.com/user_token";
     const URL = `${url.URL}/user_token`;
     const data = {
       auth: {

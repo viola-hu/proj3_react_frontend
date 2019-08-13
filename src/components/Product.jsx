@@ -51,23 +51,6 @@ export default function Product(props){
   };
 
 
-  // ************ regardless of user loggin, check if the product is out of stock *************
-  // if yes, 1) show message, 2) disable AddtoCart button
-  // TESTED: if a button is disabled, won't be able to trigger click event handler
-  // let setButtonStatus(false);
-  // let inStockUI;
-  // if (product.stock <= 0){
-  //   setButtonStatus(true);
-  //   inStockUI = (
-  //     <span class="out-of-stock">Sorry, this product is out of stock.</span>
-  //   );
-  // } else {
-  //   inStockUI = (<span>{product.stock} pcs</span>)
-  // }
-  // ************ // ************ // ************ // ************ // ************
-
-
-
   // _handleChangeQuantity make sure quantity stored in state is <= stock
   const _handleChangeQuantity = (event) => {
     console.log('event.target.value:', event.target.value); // actual input quantity

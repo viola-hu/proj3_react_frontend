@@ -11,8 +11,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 
-
-
 export default function Order(props){
 
   const orderId = props.match.params.id
@@ -24,7 +22,6 @@ export default function Order(props){
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    // const URL = `https://toyshoppingsite.herokuapp.com/order/${orderId}`;
     const URL = `${url.URL}/order/${orderId}`;
 
     const configHeader = {

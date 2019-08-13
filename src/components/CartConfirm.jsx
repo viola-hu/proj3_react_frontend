@@ -16,12 +16,8 @@ export default function CartConfirm(props){
 
   const [lineItems, setLineItems] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
-  // const [totalProductsNumberInCart, setTotalProductsNumberInCart] = useState(window.localStorage.getItem('totalProductsNumberInCart'))
-  // const [quantity, setQuantity] = useState(0);
-  // const [product, setProduct] = useState({});
 
   useEffect(()=>{
-    // const URL = `https://toyshoppingsite.herokuapp.com/cart`;
     const URL = `${url.URL}/cart`;
 
     const configHeader = {

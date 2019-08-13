@@ -178,10 +178,8 @@ export default function Home(props){
               Age over 8
             </h5>
           </Link>
-
         </Col>
       </Row>
     </Container>
-
   );
 }

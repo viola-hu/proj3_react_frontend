@@ -46,8 +46,7 @@ function LogInForm(props){
   const performLogIn = () => {
     // console.log('email:', email);
     // console.log('password:', password); // tested ok!
-    // const URL = "https://toyshoppingsite.herokuapp.com/user_token";
-    // const URL = "http://localhost:3000/user_token";
+
     const URL = `${url.URL}/user_token`;
     const data = {
       auth: {

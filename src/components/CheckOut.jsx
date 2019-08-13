@@ -17,7 +17,6 @@ export default function CheckOut(props){
   const [lineItems, setLineItems] = useState([]);
 
   useEffect(()=>{
-    // const URL = `https://toyshoppingsite.herokuapp.com/cart`;
     const URL = `${url.URL}/cart`;
 
     const configHeader = {
@@ -100,6 +99,5 @@ export default function CheckOut(props){
         </Col>
       </Row>
     </Container>
-
   );
 }

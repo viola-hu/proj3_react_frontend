@@ -11,7 +11,6 @@ import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import Dropdown from "react-bootstrap/Dropdown"
 import ModalSignUp from "./ModalSignUp";
 import ModalLogIn from "./ModalLogIn";
-// import MyAccount from "./MyAccount";
 
 
 
@@ -172,27 +171,4 @@ export default function BootNav(props){
       </Navbar.Collapse>
     </Navbar>
   );
-
 }
-
-// class BootNav
-//
-// <Image className="cart-icon" src="../public/images/cart-icon.png" fluid />
-
-// <img className="cart-icon" src={process.env.PUBLIC_URL + '/images/c101.jpg'} />
-
-// <div className="cart-icon">
-//   </div>
-
-
-
-// buttonRight = (
-//   <div>
-//     <Button className="nav-btn-space" variant="info" onClick={_handleLogOut}>
-//       LogOut
-//     </Button>
-//     <Link to={'/cart'}>
-//       <img className="cart-icon" src={process.env.PUBLIC_URL +`/images/cart-icon.png`}></img>
-//     </Link>
-//   </div>
-// );
