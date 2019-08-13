@@ -1,68 +1,76 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# V's Toy
 
-## Available Scripts
+### Live Demo
 
-In the project directory, you can run:
+Skip the reading and go straight to a live version of the site here:
+[https://viola-hu.github.io/proj3_react_frontend/#/](https://viola-hu.github.io/proj3_react_frontend/#/)
 
-### `npm start`
+Check out the back-end code here:
+[https://github.com/viola-hu/proj3_rails_backend](https://github.com/viola-hu/proj3_rails_backend)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Features + How it Looks
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1, This is a responsive e-commerce site selling cute kid toys.
 
-### `npm test`
+2x image
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2, In About page, uses can use embedded Google map to find store locations.
 
-### `npm run build`
+1x image
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3, Via search feature users can search for related products.
+Alternatively, users can simply browse through the lovely products from the four age categories.  
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+2x images
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4, With the image zooming feature, users can better inspect products with more details.
 
-### `npm run eject`
+2x images
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+5, Once logging in, users can add products to shopping cart and confirm cart items.
+2x images
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6, Using Stripe payment API, uses can then proceed to payment process.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2x image
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+7, After each purchase, users can check their purchase history in their account page.
 
-## Learn More
+1x images
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Frontend Built With
+* React.js / JavaScript
+* Bootstrap / CSS
 
-### Code Splitting
+#### Frontend Packages & APIs
+* axios
+* react-bootstrap
+* google-maps-react
+* react-image-magnify
+* react-stripe-elements
+* gh-pages (for deployment)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+* Windows LocalStorage used in storing user information and JWT
+* Utilising Google Fonts and web-sourced images
 
-### Analyzing the Bundle Size
+### Backend Built With
+* Rails
+* PostgresQL
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+#### Backend Gems
+* bcrypt
+* knock
+* rack-cors
+* stripe
+* rails_12factor (for deployment)
 
-### Making a Progressive Web App
+### Known bugs
+When users click submit payment form multiple times by accident, extra orders will be generated with $0.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Wish List
+* Admin features
+* Implement Discount or Sale options
+* Simulate Delivery System
+* Introduce User Review
+* Enable Price Filter in Search Bar
