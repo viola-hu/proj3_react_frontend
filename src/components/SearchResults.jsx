@@ -57,6 +57,7 @@ export default function SearchResults(props){
     });
   };
 
+
   let whatToShow;
   if(products.length === 0){
     whatToShow = (

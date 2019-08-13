@@ -13,7 +13,6 @@ function LogInForm(props){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [jwt, setJwt] = useState('');
 
 
   const _handleEmailChange = (event) => {
@@ -66,7 +65,6 @@ function LogInForm(props){
     axios.post(URL, data)
     .then(res => {
       console.log('response from server:', res, props);
-      setJwt(res.data.jwt);
       // once login success
       // 1) store jwt token in the localStorage
       window.localStorage.setItem('jwt', res.data.jwt);

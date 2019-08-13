@@ -7,8 +7,6 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Figure from "react-bootstrap/Figure";
-import FigureImage from "react-bootstrap/FigureImage";
-import FigureCaption from "react-bootstrap/FigureCaption";
 
 
 
@@ -80,7 +78,6 @@ export default function Category(props){
                     style={{
                       padding: '1rem',
                       border: `dashed ${color[id-1]}`,
-                      padding: '1rem'
                     }}
                     src={process.env.PUBLIC_URL + `/images/${product.image}`}
                   />

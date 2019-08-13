@@ -15,9 +15,6 @@ export default function CheckOut(props){
   const jwt = localStorage.getItem('jwt');
 
   const [lineItems, setLineItems] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
-  // const [quantity, setQuantity] = useState(0);
-  // const [product, setProduct] = useState({});
 
   useEffect(()=>{
     // const URL = `https://toyshoppingsite.herokuapp.com/cart`;

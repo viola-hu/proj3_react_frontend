@@ -9,10 +9,6 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import Dropdown from "react-bootstrap/Dropdown"
-import DropdownToggle from "react-bootstrap/DropdownToggle"
-import DropdownMenu from "react-bootstrap/DropdownMenu"
-import DropdownItem from "react-bootstrap/DropdownItem"
-
 import ModalSignUp from "./ModalSignUp";
 import ModalLogIn from "./ModalLogIn";
 // import MyAccount from "./MyAccount";
@@ -22,7 +18,6 @@ import ModalLogIn from "./ModalLogIn";
 export default function BootNav(props){
 
   // state
-  const [jwt, setJwt] = useState(localStorage.getItem('jwt'));
   const [keyWord, setKeyWord] = useState('');
   const [totalProductsNumberInCart, setTotalProductsNumberInCart] = useState(0);
 
@@ -39,8 +34,8 @@ export default function BootNav(props){
   // when a user hasn't logged in , won't see the shopping bag icon!
   // thus, totalProductsNumberInCart won't show up as null!
   useEffect(() => {
-    // whenever the location.pathname changes - route changes
-    // useEffect's callback will run, and callback will always envolve update state
+    // whenever the route changes (location.pathname changes)
+    // useEffect's callback will run
     // if state changes, the whole component will re-render
     // => here, check if the current localStorage has changed or not?
     // if yes, update state and it will trigger component to re-render
@@ -59,7 +54,6 @@ export default function BootNav(props){
 
 
     // 2) update state, so BootNav can re-render
-    setJwt('');
     setTotalProductsNumberInCart(0);
 
     // 3) redirect to Home
@@ -131,7 +125,11 @@ export default function BootNav(props){
     <Navbar sticky="top" expand="lg" className="entireBody">
       <Navbar.Brand href="#/">
         <div className="store-name">V's Toy</div>
-        <img className="happy-kids" src={process.env.PUBLIC_URL + '/images/happy-kids.png'}/>
+        <img
+          className="happy-kids"
+          src={process.env.PUBLIC_URL + '/images/happy-kids.png'}
+          alt="happykids"
+        />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
