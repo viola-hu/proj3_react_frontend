@@ -12,32 +12,40 @@ Check out the back-end code here:
 
 1, This is a responsive e-commerce site selling cute kid toys.
 
-<img alt="web-homepage" src="./src/images/101.png" width="400px">
-<img alt="phone-homepage" src="./src/images/102new.png" width="400px">
+<img alt="web-homepage" src="./src/images/101.png" width="500px">
+<img alt="phone-homepage" src="./src/images/102new.png" width="500px">
 
 2, In About page, uses can use embedded Google map to find store locations.
 
-1x image
+<img alt="phone-homepage" src="./src/images/201.png" width="500px">
+
 
 3, Via search feature users can search for related products.
 Alternatively, users can simply browse through the lovely products from the four age categories.  
 
-2x images
+<img alt="phone-homepage" src="./src/images/301.png" width="500px">
+<img alt="phone-homepage" src="./src/images/302.png" width="500px">
+
 
 4, With the image zooming feature, users can better inspect products with more details.
 
-2x images
+<img alt="phone-homepage" src="./src/images/401.png" width="500px">
+<img alt="phone-homepage" src="./src/images/402.png" width="500px">
+
 
 5, Once logging in, users can add products to shopping cart and confirm cart items.
-2x images
+
+<img alt="phone-homepage" src="./src/images/501.png" width="500px">
+<img alt="phone-homepage" src="./src/images/502.png" width="500px">
 
 6, Using Stripe payment API, users can then proceed to payment process.
 
-2x image
+<img alt="phone-homepage" src="./src/images/601.png" width="500px">
+<img alt="phone-homepage" src="./src/images/602.png" width="500px">
 
 7, After each purchase, users can check their purchase history in their account page.
 
-1x images
+<img alt="phone-homepage" src="./src/images/701.png" width="500px">
 
 
 ### Frontend Built With
