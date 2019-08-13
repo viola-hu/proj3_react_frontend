@@ -8,11 +8,12 @@ Skip the reading and go straight to a live version of the site here:
 Check out the back-end code here:
 [https://github.com/viola-hu/proj3_rails_backend](https://github.com/viola-hu/proj3_rails_backend)
 
-### Features + How it Looks
+### Features & How it Looks
 
 1, This is a responsive e-commerce site selling cute kid toys.
 
-2x image
+<img alt="web-homepage" src="./src/images/101.png" width="400px">
+<img alt="phone-homepage" src="./src/images/102new.png" width="400px">
 
 2, In About page, uses can use embedded Google map to find store locations.
 
@@ -30,7 +31,7 @@ Alternatively, users can simply browse through the lovely products from the four
 5, Once logging in, users can add products to shopping cart and confirm cart items.
 2x images
 
-6, Using Stripe payment API, uses can then proceed to payment process.
+6, Using Stripe payment API, users can then proceed to payment process.
 
 2x image
 
