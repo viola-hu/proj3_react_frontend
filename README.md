@@ -17,7 +17,7 @@ This is a responsive e-commerce site selling cute kid toys.
 <img alt="phone-homepage" src="./src/images/102new.png" width="500px">
 
 #### 2.
-In About page, uses can use embedded Google map to find store locations.
+In About page, users can use embedded Google map to find store locations.
 
 <img alt="phone-homepage" src="./src/images/201.png" width="500px">
 
@@ -49,8 +49,8 @@ Using Stripe payment API, users can then proceed to payment process.
 <img alt="phone-homepage" src="./src/images/601.png" width="500px">
 <img alt="phone-homepage" src="./src/images/602.png" width="500px">
 
-#### 7. 
-After each purchase, users can check their purchase history in their account page.
+#### 7.
+After purchase, users can check their purchase history in the Account page.
 
 <img alt="phone-homepage" src="./src/images/701.png" width="500px">
 
@@ -67,9 +67,6 @@ After each purchase, users can check their purchase history in their account pag
 * react-stripe-elements
 * gh-pages (for deployment)
 
-* Windows LocalStorage used in storing user information and JWT
-* Utilising Google Fonts and web-sourced images
-
 ### Backend Built With
 * Rails
 * PostgresQL
@@ -85,7 +82,7 @@ After each purchase, users can check their purchase history in their account pag
 When users click submit payment form multiple times by accident, extra orders will be generated with $0.
 
 ### Wish List
-* Admin features
+* Admin Rights
 * Implement Discount or Sale options
 * Simulate Delivery System
 * Introduce User Review
