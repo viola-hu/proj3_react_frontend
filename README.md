@@ -38,7 +38,7 @@ This e-commerce web application uses mainly **React** Front-end and **Rails** Ba
 
 #### Back-end
 * Rails API: JSON endpoint rendering in the Controllers
-* PostgresQL
+* PostgreSQL
 
 #### Back-end Gems
 * bcrypt
