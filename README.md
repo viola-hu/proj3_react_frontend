@@ -24,11 +24,11 @@ Check out the back-end code here:
 ### Technologies
 This e-commerce web application uses mainly **React** Front-end and **Rails** Back-end with **PostgreSQL** as database and has been deployed on **Heroku**.
 
-#### Frontend
+#### Front-end
 * React for Front-end Components
 * Bootstrap
 
-#### Frontend Packages & APIs
+#### Front-end Packages & APIs
 * axios
 * react-bootstrap
 * google-maps-react
@@ -36,11 +36,11 @@ This e-commerce web application uses mainly **React** Front-end and **Rails** Ba
 * react-stripe-elements
 * gh-pages (for deployment)
 
-#### Backend
+#### Back-end
 * Rails API: JSON endpoint rendering in the Controllers
 * PostgresQL
 
-#### Backend Gems
+#### Back-end Gems
 * bcrypt
 * knock
 * rack-cors (to enable API endpoint)
