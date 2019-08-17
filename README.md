@@ -11,18 +11,22 @@ Check out the back-end code here:
 
 ### Features
 1. A mobile-friendly responsive e-commerce site
-2. Implements Google Map API
-3. Onsite search feature
-4. Image zooming feature
+2. Onsite search feature
+3. Image zooming feature
+4. Implements Google Map API
 5. Implements Stripe Elements API
+6. JWT for user authentication
+7. Windows LocalStorage used in handling Session Data
 
 <img alt="web-homepage" src="./src/images/101.png" width="500px">
 
 
 ### Technologies
-#### Frontend Built With
-* React.js / JavaScript
-* Bootstrap / CSS
+This e-commerce web application uses mainly **React** Front-end and **Rails** Back-end with **PostgreSQL** as database and has been deployed on **Heroku**.
+
+#### Frontend
+* React for Front-end Components
+* Bootstrap
 
 #### Frontend Packages & APIs
 * axios
@@ -32,14 +36,14 @@ Check out the back-end code here:
 * react-stripe-elements
 * gh-pages (for deployment)
 
-#### Backend Built With
-* Rails
+#### Backend
+* Rails API: JSON endpoint rendering in the Controllers
 * PostgresQL
 
 #### Backend Gems
 * bcrypt
 * knock
-* rack-cors
+* rack-cors (to enable API endpoint)
 * stripe
 * rails_12factor (for deployment)
 
